@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 40%;
+            margin: auto;
+        }
+
+        .login-form, .register-form{
+            padding:20px;
+        }
+
+        .login-tab>button{
+            background-color: white;
+            border:none;
+            width:40%;
+            border-bottom: 1px solid red;
+            cursor: pointer;
+        }
+
+        input{
+            border: 1px solid lightgray;
+            width: 60%;
+            height: 20px;
+        }
+
+        .submit-button{
+            text-align: center;
+        }
+
+        .submit-button>button{
+            width: 50%;
+        }
+
+    </style>
+
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-tab" style="text-align: center;">
+            <button class="tablinks" onclick="openTab(event,'Login')">Đăng nhập</button>
+            <button class="tablinks" onclick="openTab(event,'Register')">Đăng ký</button>
+        </div>
+        
+        <div class="tabcontent" id="Login">
+            <form class="login-form">
+                <div>
+                    <label>Số điện thoại/Email</label> <br>
+                    <input type="text"> <br>
+                </div>
+                <div>
+                    <label>Mật khẩu</label> <br>
+                    <input type="password"> <br>
+                </div>
+                <!-- <div>
+                    <input type="checkbox">
+                    <label>Ghi nhớ mật khẩu</label> <br>
+                </div> -->
+                <div>
+                    <a href="#">Quên mật khẩu?</a>
+                </div>
+                <hr>
+                <div class="submit-button">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="tabcontent" id="Register">
+            <form class="register-form">
+                <div>
+                    <label>Số điện thoại</label> <br>
+                    <input type="text"> <br>
+                </div>
+
+                <div>
+                    <label>Mã xác nhận OTP</label> <br>
+                    <input type="password" disabled> <br>
+                </div>
+
+                <div>
+                    <label>Mật khẩu</label> <br>
+                    <input type="password" disabled> <br>
+                </div>
+                <hr>
+                <div class="submit-button">
+                    <button type="submit">Register</button>
+                </div>
+            </form>
+        </div>
+        
+    </div>
+</body>
+</html>

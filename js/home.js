@@ -1,5 +1,7 @@
 /*----------------------------category*---------------/ */
 function openCategory(evt, categoryname) {
+    slideIndex = 1;
+    showSlides(slideIndex);
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     
@@ -12,15 +14,23 @@ function openCategory(evt, categoryname) {
     }
     document.getElementById(categoryname).style.display = "flex";
     evt.currentTarget.className += " active";
+    // document.getElementById("defaultOpen").click();
 }
 
 
 /*-------------------------------slider tab----------------------------*/
 
 let slideIndex = 1;
+let count = slideIndex;
 showSlides(slideIndex);
 function plusSlides(n) {
+    count = count + n;
+    if (count > 3) {
+      slideIndex = 0;
+      count = 1;  
+    }
     showSlides(slideIndex += n);
+    console.log(slideIndex);
 }
 function currentSlide(n) {
     showSlides(slideIndex = n);
@@ -28,7 +38,6 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}    
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {

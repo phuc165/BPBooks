@@ -129,7 +129,7 @@ header{
     margin: auto;
     justify-content: space-between;
 }
-/*///////////////////////////category icon//////////////////////////////*/
+/* ///////////////////////////category icon////////////////////////////// */
 .category_box, .mySlides{
     background-color: white;
     border-radius: 10px;
@@ -140,7 +140,7 @@ header{
 }
 .tab{
     overflow: hidden;
-    display: flex;
+    /* display:flex; */
     justify-content:flex-start;
     width: 100%;
     border-bottom: 1px solid #EEEEEE;
@@ -156,21 +156,21 @@ header{
     cursor: pointer;
     padding: 14px 16px;
     font-size: 17px;
-    display: flex;
+    /* display: flex; */
     transition: 0.4s;
 }
 .tab button:hover{
     background-color: #CF0A0A;
     color: #EEEEEE;
 }
-.tab button:focus{
+.tab button.active{
     background-color: #CF0A0A;
     color: #EEEEEE;
 }
 /*/////////////////////////category content upper////////////////////////////////*/
 .tabcontent{
-    display: flex;
     width: 100%;
+    height:fit-content;
     justify-content: space-between;
     margin: auto;
     float: left;
