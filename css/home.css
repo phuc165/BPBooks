@@ -1,3 +1,6 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
 body{
     width: 100%;
     margin: 0;
@@ -130,10 +133,10 @@ header{
     justify-content: space-between;
 }
 /* ///////////////////////////category icon////////////////////////////// */
-.category_box, .mySlides{
+.category_box{
     background-color: white;
     border-radius: 10px;
-    margin-top: 20px;
+    margin: 20px 0;
     padding: 0 10px 20px 10px;
     width:100%;
     position: relative;
@@ -169,6 +172,7 @@ header{
 }
 /*/////////////////////////category content upper////////////////////////////////*/
 .tabcontent{
+    display: none;
     width: 100%;
     height:fit-content;
     justify-content: space-between;
@@ -236,6 +240,9 @@ header{
     text-decoration: line-through;
 }
 /*/////////////slider////////////////*/
+.mySlides{
+    display: none;
+}
 .slider_prev, .slider_next{
     position: absolute;
     background-size: 24px 24px;
@@ -290,4 +297,50 @@ header{
 .category_expand a:hover{
     background-color: #CF0A0A;
     color: #EEEEEE;
+}
+
+/*-----------------------footer-----------------*/
+.fcontainer{
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+.fcontainer>.left{
+    width: 30%;
+    padding-right: 10px;
+    border-right: 1px solid lightgray;
+}
+
+.fcontainer>.right{
+    width:60%;
+    display:flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+}
+.fcontainer h3{
+    font-size: 16px;
+}
+.fcontainer li{
+    list-style-type: none;
+    padding: 5px;
+}
+.left>div{
+    padding: 5px;
+    font-size: 13px;
+}
+.fcontainer a{
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+}
+.fcontainer a:hover{
+    color: #CF0A0A;
+}
+.fcol{
+    margin: 10px;
 }
