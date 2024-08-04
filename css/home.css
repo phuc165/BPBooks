@@ -145,7 +145,7 @@
 }
 /*/////////////slider////////////////*/
 .mySlides{
-    display: none;
+    display: flex;
 }
 .slider_prev, .slider_next{
     position: absolute;
