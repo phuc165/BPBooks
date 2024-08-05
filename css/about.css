@@ -1,0 +1,13 @@
+.container{
+    justify-content: center;
+    margin: 20px auto;
+    width: 70%;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    color: #565656;
+}
+.container p{
+    width: 100%;
+    display: block;
+}
