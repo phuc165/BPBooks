@@ -147,13 +147,13 @@
 .mySlides{
     display: flex;
 }
-.slider_prev, .slider_next{
+.sliderButton{
     position: absolute;
     background-size: 24px 24px;
     width: 40px;
     height: 40px;
-    background-color: #fff;
     box-shadow: 0px 2px 8px #00000029;
+    background-color: white;
     top: 50%;
     border-radius: 20px;
     margin: 0px;
@@ -162,13 +162,16 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.slider_next{
+#slider_next{
     transform:  translate(0, 50%);
     right: -16px;
 }
-.slider_prev{
+#slider_prev{
     transform: rotate(-180deg) translate(0, -50%);
     left: -16px;
+}
+.sliderButton:disabled{
+    background-color: #888888;
 }
 
 
