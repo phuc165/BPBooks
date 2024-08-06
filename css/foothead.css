@@ -1,34 +1,39 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
-}
-body{
+  }
+  body{
     width: 100%;
     margin: 0;
     background-color: #EEEEEE;
-}
-header{
+  }
+  header{
     height: 84px;
     width: 100%;
     background-color: white;
-}
-
-.bottom_header{ /*bottom part of the header */
+  }
+  
+  .bottom_header{ /*bottom part of the header */
     display: flex;
     align-items: left;
     justify-content: space-between;
-}
-
-#logo{ /*css for the main logo*/
-    width: 220px;
+  }
+  .bottom_header a{
+    align-items: center;
+    display: flex;
+    width: 30%;
+  }
+  #logo{ /*css for the main logo*/
+    width: 50%;
     height: auto;
     padding: 0 20px 0 20px;
-    margin: 10.2px 0 6.2px 80px;
-}
-.searchform{
+    margin: auto;
+  }
+  .searchform{
     width: 40%;
-    margin-left: 30px;
-}
-.searchbar{
+    display: flex;
+    justify-content: center;
+  }
+  .searchbar{
     border: 1px solid #888888;
     border-right: none;
     border-radius: 10px 0 0 10px;
@@ -38,18 +43,18 @@ header{
     margin: 21.2px 0 21.2px 0;
     padding: 0 0 0 20px;
     float: left;
-}
-.searchbar:focus {
+  }
+  .searchbar:focus {
     outline: none;
     border: 1px solid #888888;
     border-right: none;
-}
-.searchbar::placeholder{
+  }
+  .searchbar::placeholder{
     color: #888888;
-}
-.searchbutton{
+  }
+  .searchbutton{
     float: left;
-    width: 10%;
+    width: 7%;
     height: 40px;
     font-size: 17px;
     margin: 21.2px 0;
@@ -57,17 +62,22 @@ header{
     border: 1px solid grey;
     border-left: none;
     cursor: pointer;
-    background-color: red;
+    background-color: #CF0A0A;
     border-radius: 0 10px 10px 0;
-}
-.searchbutton img{
+  }
+  .searchbutton img{
     width: 30px;
     height: 30px;
     display: flex;
     justify-content: center;
-}
-/******************************header icon*****************************/
-.header_icon{
+  }
+  .rightIcon{
+    width: 30%;
+    justify-content: center;
+    display: flex;
+  }
+  /******************************header icon*****************************/
+  .header_icon{
     display: flex;
     float: left;
     width: 30%;
@@ -77,20 +87,21 @@ header{
     height: 45px;
     margin: 18.7px 10px;
     background-color: #CF0A0A;
-}
-.header_icon img{
+  }
+  .header_icon img{
+    width: 32px;
+    height: 32px;
     margin: 0 0 0 10px;
     padding: 10px 0 10px 10px;
-}
-.header_label{
+  }
+  .header_label{
     display: flex;
     float: left;
     margin: 2.5px 0;
     padding: 10px 10px;
     text-align: center;
-    color: #EEEEEE;
+    color: white;
     font-size: 17px;   
-    height: fit-content;
 }
 
 

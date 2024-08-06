@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tài khoản - BPBooks.com - Manga - Comic</title>
+    <title>Giỏ hàng - BPBooks - Manga - Comic</title>
     <link rel="icon" href="./images/home/header/iconlogo.png" type="">
     <link rel="stylesheet" href="./css/foothead.css">
-    <link rel="stylesheet" href="./css/login.css">
-    
+    <link rel="stylesheet" href="./css/cart.css">
 </head>
 <body>
     <header>
@@ -41,66 +40,21 @@
                     <img src="./images/home/header/cart.svg" alt="cart">
                     <p class="header_label">Giỏ hàng</p>
                 </a>
-                <a href="login.html" class="header_icon">
+                <a href="login.htmlx" class="header_icon">
                     <img src="./images/home/header/account.png" alt="cart">
                     <p class="header_label">Tài khoản</p>
                 </a>
             </div>
         </div>
     </header>
-    <div class="container">
-        <div class="login-tab" style="text-align: center;">
-            <button class="tablinks login" onclick="openTab(event,'Login')" id="defaultOpen">Đăng nhập</button>
-            <button class="tablinks signin" onclick="openTab(event,'Register')">Đăng ký</button>
-        </div>
-        
-        <div class="tabcontent" id="Login">
-            <form class="login-form">
-                <div>
-                    <label>Số điện thoại/Email</label> <br>
-                    <input type="text"> <br>
-                </div>
-                <div>
-                    <label>Mật khẩu</label> <br>
-                    <input type="password"> <br>
-                </div>
-                <!-- <div>
-                    <input type="checkbox">
-                    <label>Ghi nhớ mật khẩu</label> <br>
-                </div> -->
-                <div>
-                    <a href="#" style="text-decoration: none;">Quên mật khẩu?</a>
-                </div>
-                <hr>
-                <div class="submit-button">
-                    <button type="submit">Đăng nhập</button>
-                </div>
-            </form>
-        </div>
-        
-        <div class="tabcontent" id="Register">
-            <form class="register-form">
-                <div>
-                    <label>Số điện thoại</label> <br>
-                    <input type="text"> <br>
-                </div>
+    <h2>GIỎ HÀNG <span class="totalQty"></span></h2>
+    <div class="cartContainer">
+        <div class="col1">
 
-                <div>
-                    <label>Mã xác nhận OTP</label> <br>
-                    <input type="password" disabled> <br>
-                </div>
-
-                <div>
-                    <label>Mật khẩu</label> <br>
-                    <input type="password" disabled> <br>
-                </div>
-                <hr>
-                <div class="submit-button">
-                    <button type="submit">Đăng ký</button>
-                </div>
-            </form>
         </div>
-        
+        <div class="col2">
+
+        </div>
     </div>
     <footer>
         <div class="fcontainer">
@@ -108,7 +62,7 @@
                 <div class="logo"><img src="./images/home/header/logo.png" style="width: 40%;"></div>
                 <div>9999 Nguyễn Hữu Cảnh Phường 22 Bình Thạnh TP HCM</div>
                 <div>Công Ty Cổ Phần Phát Hành Sách TP HCM - BPBooks</div>
-                <div>BPBooks.com nhận đặt hàng trực tuyến và giao hàng tận nơi.</div>
+                <div>BPBooks nhận đặt hàng trực tuyến và giao hàng tận nơi.</div>
                 <div>KHÔNG hỗ trợ đặt mua và nhận hàng trực tiếp tại văn phòng cũng như tất cả Hệ Thống BPBooks trên toàn quốc.</div>
                 <div class="dathongbao"><img src="./images/home/header/bocongthuong.png" style="width: 20%; padding: 10px;"></div>
             </div>
@@ -152,6 +106,5 @@
             </div>
         </div>
     </footer>
-    <script src="./js/login.js"></script>
 </body>
 </html>
