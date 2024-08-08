@@ -1,10 +1,13 @@
-*{
+  *{
     font-family: Arial, Helvetica, sans-serif;
+  }
+  .bodyContainer{
+    min-height: 70vh;
   }
   body{
     width: 100%;
     margin: 0;
-    background-color: #EEEEEE;
+    background-color: #EEEEEE;    
   }
   header{
     height: 84px;
