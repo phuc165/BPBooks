@@ -102,6 +102,7 @@
     text-align: center;
     color: white;
     font-size: 17px;   
+    font-weight: bold;
 }
 
 
@@ -122,8 +123,7 @@
     flex-wrap: wrap;
     width: 90%;
     border-radius: 10px;
-    justify-content: space-between;
-    
+    justify-content: space-between;    
 }
 
 .fcontainer>.left{

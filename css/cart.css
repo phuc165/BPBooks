@@ -1,0 +1,141 @@
+h2{
+    width: 90%;
+    margin: 20px auto 0 auto;
+}
+.col1{
+    width: 80%;
+    margin: 20px;
+}
+.col2{
+    width: 20%;
+    margin: 20px;
+}
+.cartContainer{
+    width: 90%;
+    display: flex;
+    margin: auto ;
+}
+.firstRow{
+    border-radius: 10px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+}
+.firstRow label{
+    width: 70%;
+    text-align: left;
+}
+.firstRow p{
+    width: 10%;
+}
+.firstRow div{
+    width: 6%;
+}
+.productContainer{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px;
+}
+.product{
+    width: 100%;
+    height: auto;
+    display: flex;
+    float: left;
+    margin: auto;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.5px solid #ced4da;
+}
+.checkColumn{
+    width: 3%;
+    align-self: center;
+}
+.checkColumn input{
+    margin: auto;
+    display: flex;
+}
+.imgHolder{
+    width: 8%;
+    height: 100px;
+    display: flex;
+}
+.imgHolder img{
+    width: 60%;
+    margin: auto;
+}
+.title{
+    width: 50%;
+    overflow-wrap: anywhere;
+    
+}
+.qtyControl{
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #E0E0E0E0
+}
+.qtyControl .qty{
+    margin: auto 5px;
+    display: flex;
+}
+.qtyControl button{
+    border: none;
+    background-color: white;
+    padding: 2px 8px;
+    cursor: pointer;
+}
+.qtyControl button:active{
+    background-color: #eeeeee;
+}
+.price{
+    width: 10%;
+    text-align: center;
+}
+.price del{
+    color: #888888;
+}
+.delete{
+    width: 20px;
+    height: 20px;
+    margin: 10px;    
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-image: url(../images/thanhtoan/bin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.delete:hover{
+    background-image: url(../images/thanhtoan/bin2.png);
+    background-color: white;
+}
+.totalPrice{
+    background-color: white;
+    border-radius:10px ;
+    padding: 10px;
+}
+.row1{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.pay{
+    padding: 10px 30px;
+    background-color: #CF0A0A;
+    margin: 10px;    
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+}
+.pay a{
+    color: #ffffff;
+    text-decoration: none;
+}

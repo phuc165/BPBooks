@@ -52,7 +52,7 @@ h2{
     position: relative;
     margin-bottom: 12px;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 16px;
 }
 /* Hide the browser's default radio button */
 .transport input {
