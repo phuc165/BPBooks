@@ -27,14 +27,14 @@ h2{
     padding: 10px;
 }
 .firstRow label{
-    width: 70%;
+    width: 65%;
     text-align: left;
 }
 .firstRow p{
     width: 10%;
 }
 .firstRow div{
-    width: 6%;
+    width: 4%;
 }
 .productContainer{
     width: 100%;
@@ -71,10 +71,14 @@ h2{
     width: 60%;
     margin: auto;
 }
-.title{
-    width: 50%;
+#title{
+    width: 45%;
     overflow-wrap: anywhere;
     
+}
+#oldprice{
+    text-decoration:line-through;
+    color: #888888;
 }
 .qtyControl{
     width: fit-content;
@@ -82,14 +86,14 @@ h2{
     justify-content: center;
     border: 1px solid #E0E0E0E0
 }
-.qtyControl .qty{
-    margin: auto 5px;
+.qtyControl #qty{
+    margin: auto 10px;
     display: flex;
 }
 .qtyControl button{
     border: none;
     background-color: white;
-    padding: 2px 8px;
+    padding: 0 20px;
     cursor: pointer;
 }
 .qtyControl button:active{
@@ -98,9 +102,6 @@ h2{
 .price{
     width: 10%;
     text-align: center;
-}
-.price del{
-    color: #888888;
 }
 .delete{
     width: 20px;

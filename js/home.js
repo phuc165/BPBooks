@@ -7,13 +7,13 @@ function plusSlides(n) {
   showSlides(slideIndex += n);
   // console.log(slideIndex);
   console.log(count);
-  // if (count > 0 && count < 2){
-  //   document.getElementById("slider_next").disabled = false;
-  //   document.getElementById("slider_prev").disabled = false;
-  //   console.log('undis')
-  // }
-  // if (count <= 0) {document.getElementById("slider_prev").disabled = true; console.log('dis');}
-  // if (count >= 2){document.getElementById("slider_next").disabled = true; console.log('dis');}
+  if (count > 0 && count < 2){
+    document.getElementById("slider_next").style.display = "block";
+    document.getElementById("slider_prev").style.display = "block";
+    console.log('undis')
+  }
+  if (count <= 0) {document.getElementById("slider_prev").style.display = "none"; console.log('dis');}
+  if (count >= 2){document.getElementById("slider_next").style.display = "none"; console.log('dis');}
 }
  function showSlides(n) {
   let i;
@@ -30,7 +30,9 @@ function plusSlides(n) {
 /*----------------------------category*---------------/ */
 
 function openCategory(evt, categoryname,slideIndx) {
-  count = 0;
+  count = 0;  
+  document.getElementById("slider_prev").style.display = "none";
+  document.getElementById("slider_next").style.display = "block";
   var  tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   showSlides(slideIndx);
@@ -48,4 +50,30 @@ function openCategory(evt, categoryname,slideIndx) {
 document.getElementById("defaultOpen").click();
 
 
- 
+
+
+
+
+
+
+
+
+
+
+
+var product_container = document.getElementsByClassName("product_container2");
+function hideProduct() {
+  console.log("run");
+  for (let i = 10; i < product_container.length; i++){
+    product_container[i].style.display = "none";
+    console.log(i);
+  }
+}
+function ShowAll(){
+  for (let i = 0; i< product_container.length;i++){
+    if (product_container[i].style.display == "none"){
+      product_container[i].style.display = "block";
+    }
+  }
+  document.getElementById("showmore").style.display = "none";
+}

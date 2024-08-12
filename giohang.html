@@ -40,7 +40,7 @@
                     <img src="./images/home/header/cart.svg" alt="cart">
                     <p class="header_label">Giỏ hàng</p>
                 </a>
-                <a href="login.htmlx" class="header_icon">
+                <a href="login.html" class="header_icon">
                     <img src="./images/home/header/account.png" alt="cart">
                     <p class="header_label">Tài khoản</p>
                 </a>
@@ -61,34 +61,25 @@
                     <div class="product">
                         <div class="checkColumn"><input type="checkbox" id="check"></div> 
                         <div class="imgHolder"><img src="./images/product/test2.jpg" alt=""></div>
-                        <div class="title">Shikanoko Noko Nokotan</div>
+                        <div id="title"></div>
                         <div class="qtyControl">
-                            <button>-</button>
-                            <div class="qty">2</div>
-                            <button>+</button>
+                            <button onclick="subQty()">-</button>
+                            <div id="qty"></div>
+                            <button onclick="addQty()">+</button>
                         </div>
-                        <div class="price">999.000đ<br><del>1.000.000</del></div>
-                        <button class="delete"></button>
-                    </div>
-                    <div class="product">
-                        <div class="checkColumn"><input type="checkbox" id="check"></div>                    
-                        <div class="imgHolder"><img src="./images/product/test2.jpg" alt=""></div>
-                        <div class="title">Shikanoko Noko Nokotannnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn</div>
-                        <div class="qtyControl">
-                            <button>-</button>
-                            <div class="qty">3</div>
-                            <button>+</button>
+                        <div class="price">
+                            <div id="newprice"></div>
+                            <div id="oldprice"></div>
                         </div>
-                        <div class="price">999.000đ<br><del>1.000.000</del></div>
-                        <button class="delete"></button>
-                    </div>
+                        <button class="delete" onclick="deleteProduct()"></button>
+                    </div>                    
                 </div>
             </div>
             <div class="col2">
                 <div class="totalPrice">
                     <div class="row1">
                         <div>Thành tiền</div>
-                        <div id="sum">200.000 đ</div>
+                        <div id="sum"></div>
                     </div>
                     <div class="pay"><a href="thanhtoan.html">THANH TOÁN</a></div>
                 </div>
@@ -145,5 +136,6 @@
             </div>
         </div>
     </footer>
+    <script src="./js/cart.js"></script>
 </body>
 </html>
