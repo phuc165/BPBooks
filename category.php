@@ -22,7 +22,7 @@
                         <div class="product_bottom">
                             <a href="product.php"><?= $product['title'] ?></a>
                             <div class="product_price">
-                                <p class="newprice"><?= $product['newPrice'] ?>đ<span id="discount">-<?= (1-($product['newPrice']/$product['oldPrice']))*100 ?>%</span></p>
+                                <p class="newprice"><?= $product['newPrice'] ?>đ<span id="discount">-<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
                                 <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
                             </div>
                             <div class="buyContainer">
@@ -43,259 +43,68 @@
                        
         </div>
         <div class="mySlides fade">
-            
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test2.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
+            <?php 
+                $idTheLoai = "Hành_động";
+                for ($i=6; $i<=10; $i++){
+                    $product = getProduct4Slide($idTheLoai, $i);  ?>
+                    <div class="product_container">
+                        <a href="product.php" class="product_image">
+                            <img src="<?= $product['img1'] ?>" alt="">
+                        </a>
+                        <div class="product_bottom">
+                            <a href="product.php"><?= $product['title'] ?></a>
+                            <div class="product_price">
+                                <p class="newprice"><?= $product['newPrice'] ?>đ<span id="discount">-<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
+                                <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
+                            </div>
+                            <div class="buyContainer">
+                                <div class="addCart">Thêm vào giỏ</div>
+                                <div class="buyNow">Mua ngay</div>
+                            </div>                                
+                            <div class="rating_container">
+                                <div class="rating">
+                                    
+                                </div>
+                                <div class="soldqty">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test2.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test2.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test2.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-            <a href="#" class="product_image">
-                <img src="./images/product/test2.jpg" alt="">
-            </a>
-            <div class="product_bottom">
-                <a href="#">Shin kậu pé pút ckì</a>
-                <div class="product_price">
-                    <p class="newprice">599.400 đ <span>-40%</span></p>
-                    <p class="oldprice">999.000 đ</p>
-                </div>
-                <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                <div class="rating_container">
-                    <div class="rating">
-                        
-                    </div>
-                    <div class="soldqty">
-                        
-                    </div>
-                </div>
-            </div>                     
-            </div>
-                
+            <?php } ?>  
+                       
         </div>
         <div class="mySlides fade">
-            
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test3.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
+            <?php 
+                $idTheLoai = "Hành_động";
+                for ($i=11; $i<=15; $i++){
+                    $product = getProduct4Slide($idTheLoai, $i);  ?>
+                    <div class="product_container">
+                        <a href="product.php" class="product_image">
+                            <img src="<?= $product['img1'] ?>" alt="">
+                        </a>
+                        <div class="product_bottom">
+                            <a href="product.php"><?= $product['title'] ?></a>
+                            <div class="product_price">
+                                <p class="newprice"><?= $product['newPrice'] ?>đ<span id="discount">-<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
+                                <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
+                            </div>
+                            <div class="buyContainer">
+                                <div class="addCart">Thêm vào giỏ</div>
+                                <div class="buyNow">Mua ngay</div>
+                            </div>                                
+                            <div class="rating_container">
+                                <div class="rating">
+                                    
+                                </div>
+                                <div class="soldqty">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test3.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test3.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-                <a href="#" class="product_image">
-                    <img src="./images/product/test3.jpg" alt="">
-                </a>
-                <div class="product_bottom">
-                    <a href="#">Shin kậu pé pút ckì</a>
-                    <div class="product_price">
-                        <p class="newprice">599.400 đ <span>-40%</span></p>
-                        <p class="oldprice">999.000 đ</p>
-                    </div>
-                    <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                    
-                    <div class="rating_container">
-                        <div class="rating">
-                            
-                        </div>
-                        <div class="soldqty">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="product_container">
-            <a href="#" class="product_image">
-                <img src="./images/product/test3.jpg" alt="">
-            </a>
-            <div class="product_bottom">
-                <a href="#">Shin kậu pé pút ckì</a>
-                <div class="product_price">
-                    <p class="newprice">599.400 đ <span>-40%</span></p>
-                    <p class="oldprice">999.000 đ</p>
-                </div>
-                <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                <div class="rating_container">
-                    <div class="rating">
-                        
-                    </div>
-                    <div class="soldqty">
-                        
-                    </div>
-                </div>
-            </div>
-            </div>                    
+            <?php } ?>  
+                       
         </div>                           
     </div>
     <div id="Phiêu_lưu" class="tabcontent">
