@@ -20,4 +20,15 @@
             die("Lỗi trong hàm: " . __FUNCTION__ . ":" . $e->getMessage());
         }     
     }
+
+    function getProduct($idP) {
+        try {
+            $sql = "SELECT * FROM product WHERE productID=$idP";
+            global $conn;
+            $kq = $conn->query($sql);
+            return $kq->fetch();
+        } catch (Exception $e) {
+            die("Lỗi trong hàm: " . __FUNCTION__ . ":" . $e->getMessage());
+        }  
+    }
 ?>

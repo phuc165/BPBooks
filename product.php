@@ -1,4 +1,3 @@
-// title, giá cũ/mới, url img, rate, mô tả, ID, NXB, Tác giả, độ tuổi,
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +9,13 @@
     <link rel="stylesheet" href="./css/product.css">
 </head>
 <body>
-    <?php require_once 'header.php' ?>
+    <?php 
+        require_once 'header.php';
+        require_once 'connectdb.php';
+        $id = $_GET['productID'];
+        settype($id, "int");
+        $product = getProduct($id);
+    ?>
     <div class="bodyContainer">
         <div class="productContainer">
             <div class="imageContainer">
@@ -20,16 +25,16 @@
                     </div>          
                     <div class="row">
                         <div class="column">
-                            <img src="./images/product/test1.jpg" onclick="myFunction(this,1);"id="defaultOpen">
+                            <img src="<?= $product['img1'] ?>" onclick="myFunction(this,1);"id="defaultOpen">
                         </div>
                         <div class="column">
-                            <img src="./images/product/test2.jpg" onclick="myFunction(this,1);">
+                            <img src="<?= $product['img2'] ?>" onclick="myFunction(this,1);">
                         </div>
                         <div class="column">
-                            <img src="./images//product/test3.jpg" onclick="myFunction(this,1);">
+                            <img src="<?= $product['img3'] ?>" onclick="myFunction(this,1);">
                         </div>
                         <div class="column">
-                            <img src="./images//product/test4.jpg" onclick="myFunction(this,1);">
+                            <img src="<?= $product['img4'] ?>" onclick="myFunction(this,1);">
                         </div>                         
                     </div>                        
                 </div>
@@ -41,16 +46,16 @@
                         </div>          
                         <div class="row">
                             <div class="column">
-                                <img src="./images/product/test1.jpg" onclick="myFunction(this,2);"id="defaultOpen2">
+                                <img src="<?= $product['img1'] ?>" onclick="myFunction(this,2);"id="defaultOpen2">
                             </div>
                             <div class="column">
-                                <img src="./images/product/test2.jpg" onclick="myFunction(this,2);">
+                                <img src="<?= $product['img2'] ?>" onclick="myFunction(this,2);">
                             </div>
                             <div class="column">
-                                <img src="./images/product/test3.jpg" onclick="myFunction(this,2);">
+                                <img src="<?= $product['img3'] ?>" onclick="myFunction(this,2);">
                             </div>
                             <div class="column">
-                                <img src="./images/product/test4.jpg" onclick="myFunction(this,2);">
+                                <img src="<?= $product['img4'] ?>" onclick="myFunction(this,2);">
                             </div>                         
                         </div>                        
                     </div>
@@ -58,16 +63,16 @@
                 </div>
             </div>
             <div class="imageLeft">
-                <div id="productTitle" >Sách - Bocchi The Rock!: Tập 4 (Tặng Kèm Standee Ivory, Số Lượng Có Hạn)</div>
-                <span id="rate">5<img src="./images/product/star.png" alt=""></span>
+                <div id="productTitle"><?= $product['title'] ?></div>
+                <span id="rate"><?= $product['rating'] ?><img src="./images/product/star.png" alt=""></span>
                 <div class="publicDetail">
-                    <div id="NXB">Nhà xuất bản: <b>NXB Kim Đồng</b></div>
-                    <div id="author">Tác giả: <b>Aki Hamazi</b></div>
+                    <div id="NXB">Nhà xuất bản: <b><?= $product['nxb'] ?></b></div>
+                    <div id="author">Tác giả: <b><?= $product['author'] ?></b></div>
                 </div>
                 <div class="price">
-                    <div class="oldPrice">999 đ</div>
-                    <div class="newPrice">20.000 đ</div>
-                    <div class="discount">-5%</div>
+                    <div class="oldPrice"><?= $product['oldPrice'] ?> đ</div>
+                    <div class="newPrice"><?= $product['newPrice'] ?> đ</div>
+                    <div class="discount"><span id="discount">-<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</div>
                 </div>                
                 <div class="qtyControl">
                     <p>Số lượng:</p>
@@ -86,7 +91,8 @@
         </div>
         <div class="detailContainer">
             <div class="detail">
-                Mô tả sản phẩm
+                <p style="font-size:25px; font-weight:bold">MÔ TẢ SẢN PHẨM</p>
+                <?= $product['description'] ?>
             </div>
             
         </div>

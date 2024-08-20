@@ -239,3 +239,7 @@ body{
     border-radius: 10px;
 
 }
+.detailContainer p{
+    font-size: 20px;
+    padding: 30px 30px 0 30px;
+}
