@@ -12,3 +12,50 @@ function openTab(evt, cityName) {
     evt.currentTarget.className += " active";
 }
 document.getElementById("defaultOpen").click();
+
+
+
+
+var loginData=[
+    {
+        userName:"admin",
+        password:"admin"
+    },
+    {
+        userName:"user",
+        password:"user"
+    }
+]
+ var loginName= document.getElementById("login-name")
+ var loginPass= document.getElementById("login-pass")
+
+
+function validateLogin(){
+    var name = loginName.value;
+    var pass = loginPass.value;
+    var namecheck = loginData.find(logName=>logName.userName==name)
+    if(namecheck!=undefined){
+        if(namecheck.password==pass){
+            alert("dang nhap thanh cong")
+        }else{
+            alert("dang nhap that bai")
+        }
+    }else{
+        alert("dang nhap that bai")
+    }
+    console.log("chek") 
+}
+
+var regisNum = document.getElementById("number");
+var regisPass = document.getElementById("pass");
+const regex = /[!@#$%^&*(),.?":{}|<>]/g;
+const str = "Hello, World!";
+const result = str.match(regex);
+function checkregis(){
+    if (checkNum() == true){
+        alert
+    }
+}
+function checkNum(){
+
+}

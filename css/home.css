@@ -110,10 +110,12 @@
     width: 100%;
 }
 .product_bottom a{
-    font-size:20px;
+    font-size:10px;
     text-decoration: none;
     margin-left: 20px;
     color: #333333;
+    padding: 0 20px;
+    overflow-wrap: break-word;   
 }
 /*//////////////////////////////price/////////////////*/
 .product_price{
@@ -144,6 +146,7 @@
 .buyContainer {
     display: flex;
     justify-content:space-around;
+    margin-bottom: 20px;
 }
 
 .buyContainer .buyNow, .buyContainer .addCart{
