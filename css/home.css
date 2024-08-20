@@ -109,13 +109,16 @@
 .product_bottom{
     width: 100%;
 }
-.product_bottom a{
-    font-size:10px;
+.product_bottom .title {
+    height: 42px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+.product_bottom .title a{
+    font-size: 18px;
     text-decoration: none;
     margin-left: 20px;
-    color: #333333;
-    padding: 0 20px;
-    overflow-wrap: break-word;   
+    color: #333333;     
 }
 /*//////////////////////////////price/////////////////*/
 .product_price{

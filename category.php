@@ -20,7 +20,7 @@
                             <img src="<?= $product['img1'] ?>" alt="">
                         </a>
                         <div class="product_bottom">
-                            <a href="product.php"><?= $product['title'] ?></a>
+                            <div class="title"><a href="product.php"><?= $product['title'] ?></a></div>
                             <div class="product_price">
                                 <p class="newprice"><?= $product['newPrice'] ?>đ<span id="discount">-<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
                                 <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
@@ -52,7 +52,7 @@
                             <img src="<?= $product['img1'] ?>" alt="">
                         </a>
                         <div class="product_bottom">
-                            <a href="product.php"><?= $product['title'] ?></a>
+                            <div class="title"><a href="product.php"><?= $product['title'] ?></a></div>
                             <div class="product_price">
                                 <p class="newprice"><?= $product['newPrice'] ?>đ<span id="discount">-<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
                                 <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
@@ -84,7 +84,7 @@
                             <img src="<?= $product['img1'] ?>" alt="">
                         </a>
                         <div class="product_bottom">
-                            <a href="product.php"><?= $product['title'] ?></a>
+                            <div class="title"><a href="product.php"><?= $product['title'] ?></a></div>
                             <div class="product_price">
                                 <p class="newprice"><?= $product['newPrice'] ?>đ<span id="discount">-<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
                                 <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
