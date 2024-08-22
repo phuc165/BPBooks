@@ -1,4 +1,4 @@
-<div class="productList">
+<div class="productList" >
     <div class="productFilter">
         <p>Lọc sản phẩm</p>
         <div class="Filter">
@@ -29,31 +29,53 @@
         </div>
     </div>
     <div class="listContainer">
-        <div class="product_container2">
-            <a href="#" class="product_image">
-                <img src="./images/product/test1.jpg" alt="">
-            </a>
-            <div class="product_bottom">
-                <a href="#">Shin kậu pé pút ckì</a>
-                <div class="product_price">
-                    <p class="newprice">599.400 đ <span>-40%</span></p>
-                    <p class="oldprice">999.000 đ</p>
+        <?php 
+            for ($i=1; $i<=40; $i++) { 
+                $product = getProduct($i); ?>
+                <div class="product_container2">
+                    <a href="product.php?productID=<?=$product['productID']?>" class="product_image">
+                        <img src="<?= $product['img1'] ?>" alt="">
+                    </a>
+                    <div class="product_bottom">
+                        <a href="product.php?productID=<?=$product['productID']?>"></a>
+                        <div class="product_price">
+                            <p class="newprice"><?= $product['newPrice'] ?> đ<span>--<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
+                            <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
+                        </div>
+                        <div class="buyContainer">
+                                <div class="addCart">Thêm vào giỏ</div>
+                                <div class="buyNow">Mua ngay</div>
+                            </div>  
+                        <div class="rating_container">
+                            <div class="rating">
+                                
+                            </div>
+                            <div class="soldqty">
+                                
+                            </div>
+                        </div>
+                    </div>                         
                 </div>
-                <div class="buyContainer">
-                        <div class="addCart">Thêm vào giỏ</div>
-                        <div class="buyNow">Mua ngay</div>
-                    </div>  
-                <div class="rating_container">
-                    <div class="rating">
-                        
-                    </div>
-                    <div class="soldqty">
-                        
-                    </div>
-                </div>
-            </div>                         
-        </div>
-        
+        <?php } ?>     
         <div class="category_expand" id="showmore" onclick="ShowAll()">Xem thêm</div>
     </div>
 </div>
+<script>
+    var product_container = document.getElementsByClassName("product_container2");
+    function hideProduct() {
+        console.log("run");
+        for (let i = 10; i < product_container.length; i++){
+            product_container[i].style.display = "none";
+            console.log(i);
+        }
+    }
+    function ShowAll() {
+    for (let i = 0; i < product_container.length; i++) {
+        const computedStyle = window.getComputedStyle(product_container[i]);
+        if (computedStyle.display === 'none') {
+            product_container[i].style.display = 'block';
+        }
+    }
+    document.getElementById("showmore").style.display = "none";
+}
+</script>

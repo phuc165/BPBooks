@@ -61,22 +61,7 @@ document.getElementById("defaultOpen").click();
 
 
 
-var product_container = document.getElementsByClassName("product_container2");
-function hideProduct() {
-  console.log("run");
-  for (let i = 10; i < product_container.length; i++){
-    product_container[i].style.display = "none";
-    console.log(i);
-  }
-}
-function ShowAll(){
-  for (let i = 0; i< product_container.length;i++){
-    if (product_container[i].style.display == "none"){
-      product_container[i].style.display = "block";
-    }
-  }
-  document.getElementById("showmore").style.display = "none";
-}
+
 
 
 
