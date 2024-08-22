@@ -233,13 +233,14 @@ body{
 
 .detailContainer{
     width: 80%;
-    height: 500px;
+    height: fit-content;
     background-color: white;
     margin: 20px auto;
     border-radius: 10px;
+    padding-bottom: 30px;
 
 }
-.detailContainer p{
+.detailContainer p, .detailContainer pre{
     font-size: 20px;
     padding: 30px 30px 0 30px;
 }

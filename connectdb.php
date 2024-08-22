@@ -12,7 +12,7 @@
 
     function getProduct4Slide($idTL, $idP) {
         try {
-            $sql = "SELECT title, oldPrice, newPrice, img1, rating FROM product WHERE theLoai='$idTL' AND productID=$idP";
+            $sql = "SELECT productID, title, oldPrice, newPrice, img1, rating FROM product WHERE theLoai='$idTL' AND productID=$idP";
             global $conn;
             $kq = $conn->query($sql);
             return $kq->fetch();
