@@ -19,14 +19,14 @@
             </div>
             
             <div class="tabcontent" id="Login">
-                <form class="login-form">
+                <form class="login-form" action="xulylogin.php" method="post">
                     <div>
                         <label>Số điện thoại/Email</label> <br>
-                        <input type="text" id="login-name"> <br>
+                        <input type="text" id="login-name" name="u"> <br>
                     </div>
                     <div>
                         <label>Mật khẩu</label> <br>
-                        <input type="password" id="login-pass"> <br>
+                        <input type="password" id="login-pass" name="p"> <br>
                     </div>
                     <!-- <div>
                         <input type="checkbox">
@@ -50,12 +50,12 @@
                     </div>
 
                     <div>
-                        <label>Mã xác nhận OTP</label> <br>
-                        <input type="text" > <br>
+                        <label>Mật khẩu</label> <br>
+                        <input type="password" > <br>
                     </div>
 
                     <div>
-                        <label>Mật khẩu</label> <br>
+                        <label>Xác nhận mật khẩu</label> <br>
                         <input type="password" required id="pass"> <br>
                     </div>
                     <hr>
