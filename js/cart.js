@@ -31,3 +31,7 @@ function addQty(){
 function deleteProduct() {  
     
 }
+
+
+
+

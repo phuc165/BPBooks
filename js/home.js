@@ -1,19 +1,15 @@
-/*-------------------------------slider tab----------------------------*/
-
 let slideIndex = 0;
 let count = 0;
 function plusSlides(n) {
   count = count + n;
   showSlides(slideIndex += n);
-  // console.log(slideIndex);
-  console.log(count);
   if (count > 0 && count < 2){
     document.getElementById("slider_next").style.display = "block";
     document.getElementById("slider_prev").style.display = "block";
-    console.log('undis')
+    
   }
-  if (count <= 0) {document.getElementById("slider_prev").style.display = "none"; console.log('dis');}
-  if (count >= 2){document.getElementById("slider_next").style.display = "none"; console.log('dis');}
+  if (count <= 0) {document.getElementById("slider_prev").style.display = "none"; }
+  if (count >= 2){document.getElementById("slider_next").style.display = "none";}
 }
  function showSlides(n) {
   let i;
@@ -47,7 +43,9 @@ function openCategory(evt, categoryname,slideIndx) {
   elemet.style.display = "block"; 
   evt.currentTarget.className += " active";
 }
-document.getElementById("defaultOpen").click();
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("defaultOpen").click();
+});
 
 
 

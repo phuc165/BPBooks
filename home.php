@@ -17,13 +17,13 @@
 <body onload="hideProduct()">
     <?php require_once 'header.php' ?>
     <div class="bodyContainer">
-        <!-- <img src="./images/home/body/banner.png" alt="" style="width:100%"> -->
+        <img src="./images/home/body/banner.png" alt="" style="width:100%">
         <div class="main_body">
             <?php require_once 'category.php' ?>
             <?php require_once 'productList.php' ?>
         </div>
     </div>
     <?php require_once 'footer.php' ?>
-    <script src="./js/home.js"></script>
+    
 </body>
 </html>

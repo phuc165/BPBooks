@@ -10,12 +10,12 @@
         die("Lỗi: " . $e->getMessage());
     }
 
-    function getProduct4Slide($idTL, $idP) {
+    function getProduct4Slide($idTL) {
         try {
-            $sql = "SELECT productID, title, oldPrice, newPrice, img1, rating FROM product WHERE theLoai='$idTL' AND productID=$idP";
+            $sql = "SELECT productID, title, oldPrice, newPrice, img1, rating FROM product WHERE theLoai='$idTL'";
             global $conn;
             $kq = $conn->query($sql);
-            return $kq->fetch();
+            return $kq->fetchAll();
         } catch (Exception $e) {
             die("Lỗi trong hàm: " . __FUNCTION__ . ":" . $e->getMessage());
         }     
@@ -32,3 +32,4 @@
         }  
     }
 ?>
+

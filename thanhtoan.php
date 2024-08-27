@@ -99,7 +99,7 @@
         </div>
         <div class="sideBar">
             <hr>
-            <div><a href="#">XÁC NHẬN THANH TOÁN</a></div>
+            <div><a href="successOrder.php">XÁC NHẬN THANH TOÁN</a></div>
         </div>
     </div>
 </body>
