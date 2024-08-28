@@ -8,14 +8,13 @@ $p = trim(strip_tags($p));
 //truy xuất db
 require_once ("connectdb.php");
 //asd
-$sql="SELECT userName, password FROM user WHERE userName='{$u}' AND password ='{$p}'";
+$sql="SELECT userID, userName, password FROM user WHERE userName='{$u}' AND password ='{$p}'";
 $kq = $conn->query($sql);
 $numrows_user = $kq->rowCount();
 if ($numrows_user == 1) {// login thành công
     session_start();
     $row_user = $kq->fetch();
-    $_SESSION['username'] = $row_user['userName'];//tạo biến ghi nhận user đã login
-    $_SESSION['password'] = $row_user['password'];//tạo biến ghi nhận user đã login
+    $_SESSION['userID'] = $row_user['userID'];//tạo biến ghi nhận user đã login
     header("location: ./home.php");
 }
 else header("location: login.php");//login thất bại, login lại

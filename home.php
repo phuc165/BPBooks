@@ -14,7 +14,7 @@
 
 </head>
 
-<body onload="hideProduct()">
+<body >
     <?php require_once 'header.php' ?>
     <div class="bodyContainer">
         <img src="./images/home/body/banner.png" alt="" style="width:100%">

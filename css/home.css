@@ -239,7 +239,7 @@
     position: absolute;
     background-color: white;
     border: 0.5px solid #888888;
-    min-width: 110%;
+    min-width: 300px;
 }
 .dropdownContent div{
     display: flex;
@@ -253,6 +253,17 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+}
+
+.dropdownContent2{
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 0.5px solid #888888;
+    width: 1000px;
+}
+.Filter:hover .dropdownContent2{
+    display: block;
 }
 /*////////////////xem them///////////////////////*/
 .category_expand{

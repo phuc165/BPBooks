@@ -43,24 +43,24 @@
             </div>
             
             <div class="tabcontent" id="Register">
-                <form class="register-form">
+                <form class="register-form" action="xulydangky.php" method="post">
                     <div>
                         <label>Số điện thoại</label> <br>
-                        <input type="number" required id="number" onkeyup="checkNum()"> <br>
+                        <input type="number" required id="number" onkeyup="checkNum()" name="username"> <br>
                     </div>
 
                     <div>
                         <label>Mật khẩu</label> <br>
-                        <input type="password" > <br>
+                        <input type="password" name="pass"> <br>
                     </div>
 
                     <div>
                         <label>Xác nhận mật khẩu</label> <br>
-                        <input type="password" required id="pass"> <br>
+                        <input type="password" required id="pass" name="repass"> <br>
                     </div>
                     <hr>
                     <div class="submit-button">
-                        <button type="submit" onclick="checkregis">Đăng ký</button>
+                        <button type="submit">Đăng ký</button>
                     </div>
                 </form>
             </div>

@@ -53,10 +53,13 @@ $count = 0;
                                 <div class="title"><a href="product.php?productID=<?=$productItem['productID']?>"><?= $productItem['title'] ?></a></div>
                                 <div class="product_price">
                                     <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1-($productItem['newPrice']/$productItem['oldPrice']))*100,1) ?>%</span></p>
-                                    <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>productItem
+                                    <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
                                 </div>
                                 <div class="buyContainer">
-                                    <div class="addCart">Thêm vào giỏ</div>
+                                    <form class="addCart" method="post" action="xulygiohang.php">
+                                        <input type="hidden" name="productID" value="<?=$productItem['productID']?>"/>
+                                        <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
+                                    </form>
                                     <div class="buyNow">Mua ngay</div>
                                 </div>                                
                                 <div class="rating_container">
@@ -87,7 +90,10 @@ $count = 0;
                                     <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>productItem
                                 </div>
                                 <div class="buyContainer">
-                                    <div class="addCart">Thêm vào giỏ</div>
+                                    <form class="addCart" method="post" action="xulygiohang.php">
+                                        <input type="hidden" name="productID" value="<?=$productItem['productID']?>"/>
+                                        <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
+                                    </form>
                                     <div class="buyNow">Mua ngay</div>
                                 </div>                                
                                 <div class="rating_container">
@@ -118,7 +124,10 @@ $count = 0;
                                     <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>productItem
                                 </div>
                                 <div class="buyContainer">
-                                    <div class="addCart">Thêm vào giỏ</div>
+                                    <form class="addCart" method="post" action="xulygiohang.php">
+                                        <input type="hidden" name="productID" value="<?=$productItem['productID']?>"/>
+                                        <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
+                                    </form>
                                     <div class="buyNow">Mua ngay</div>
                                 </div>                                
                                 <div class="rating_container">
@@ -140,3 +149,7 @@ $count = 0;
     <div class="sliderButton" id="slider_next" onclick="plusSlides(1)" ></div> 
     <div class="sliderButton" id="slider_prev" onclick="plusSlides(-1)"></div>
 </div>
+
+
+<?php
+    

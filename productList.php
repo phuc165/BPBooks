@@ -1,63 +1,82 @@
+<?php require_once 'connectdb.php'; ?>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="./js/productList.js"></script>
+<script src="./js/filter.js"></script>
+<link href = "css/jquery-ui.css" rel = "stylesheet">
+<link rel="stylesheet" href="./css/productList.css">
 <div class="productList" >
     <div class="productFilter">
         <p>Lọc sản phẩm</p>
         <div class="Filter">
             <button class="dropBtn">Giá</button>
             <div class="dropdownContent">
-                <div class="filterContent"><input type="checkbox">0-100,000đ</div>
-                <div class="filterContent"><input type="checkbox">100,000đ-200,000đ</div>
-                <div class="filterContent"><input type="checkbox">200,000đ-500,000đ</div>
-                <div class="filterContent"><input type="checkbox">500,000đ trở lên</div>
+                <input type="hidden" id="hidden_minimum_price" value="10000" />
+                <input type="hidden" id="hidden_maximum_price" value="300000" />
+                <p id="price_show">10000 - 300000</p>
+                <div id="price_range"></div>
             </div>
         </div>
         <div class="Filter">
             <button class="dropBtn">Độ tuổi</button>
             <div class="dropdownContent">
-                <div class="filterContent"><input type="checkbox">6+</div>
-                <div class="filterContent"><input type="checkbox">11+</div>
-                <div class="filterContent"><input type="checkbox">16+</div>
-                <div class="filterContent"><input type="checkbox">18+</div>
+                <?php 
+                    try {
+                        $sql = "SELECT DISTINCT age FROM product";
+                        $age = $conn->query($sql);
+                        $age -> execute();
+                        // Fetch all rows from the result set
+                        $age = $age->fetchAll(PDO::FETCH_ASSOC);
+                    } catch (Exception $e) {
+                        die("Error in function: " . __FUNCTION__ . ":" . $e->getMessage());
+                    }
+                    foreach ($age as $row) {
+                ?>
+                <div class="filterContent" class="checkbox">
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            value="<?= $row['age']; ?>"
+                            class="common_selector age"
+                        > 
+                        <?= $row['age']; ?> 
+                    </label>
+                </div>
+                <?php } ?>
             </div>
         </div>
         <div class="Filter">
             <button class="dropBtn">Nhà xuất bản</button>
             <div class="dropdownContent">
-                <div class="filterContent"><input type="checkbox">NXB Trẻ</div>
-                <div class="filterContent"><input type="checkbox">NXB Kim Đồng</div>
-                <div class="filterContent"><input type="checkbox">IPM</div>                
+                <?php 
+                    try {
+                        $sql = "SELECT DISTINCT nxb FROM product";
+                        $nxb = $conn->query($sql);
+                        $nxb -> execute();
+                        // Fetch all rows from the result set
+                        $nxb = $nxb->fetchAll(PDO::FETCH_ASSOC);
+                    } catch (Exception $e) {
+                        die("Error in function: " . __FUNCTION__ . ":" . $e->getMessage());
+                    }
+                    foreach ($nxb as $row) {
+                ?>
+                <div class="filterContent" class="checkbox">
+                    <label>
+                        <input 
+                            type="checkbox" 
+                            value="<?= $row['nxb']; ?>"
+                            class="common_selector nxb"
+                            >
+                        <?= $row['nxb']; ?>
+                    </label>
+                </div>
+                <?php } ?>            
             </div>
         </div>
     </div>
-    <div class="listContainer">
-        <?php 
-            for ($i=1; $i<=40; $i++) { 
-                $product = getProduct($i); ?>
-                <div class="product_container2">
-                    <a href="product.php?productID=<?=$product['productID']?>" class="product_image">
-                        <img src="<?= $product['img1'] ?>" alt="">
-                    </a>
-                    <div class="product_bottom">
-                        <a href="product.php?productID=<?=$product['productID']?>"></a>
-                        <div class="product_price">
-                            <p class="newprice"><?= $product['newPrice'] ?> đ<span>--<?= round((1-($product['newPrice']/$product['oldPrice']))*100,1) ?>%</span></p>
-                            <p class="oldprice"><?= $product['oldPrice'] ?> đ</p>
-                        </div>
-                        <div class="buyContainer">
-                                <div class="addCart">Thêm vào giỏ</div>
-                                <div class="buyNow">Mua ngay</div>
-                            </div>  
-                        <div class="rating_container">
-                            <div class="rating">
-                                
-                            </div>
-                            <div class="soldqty">
-                                
-                            </div>
-                        </div>
-                    </div>                         
-                </div>
-        <?php } ?>     
-        <div class="category_expand" id="showmore" onclick="ShowAll()">Xem thêm</div>
+    <div class="listContainer row filter_data">
+        <div class="row filter_data listContainer">
+        </div>  
+        <!-- <div class="category_expand" id="showmore" onclick="ShowAll()">Xem thêm</div> -->
     </div>
 </div>
-<script src="./js/productList.js"></script>
