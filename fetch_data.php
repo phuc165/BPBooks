@@ -23,7 +23,7 @@ if(isset($_POST["action"]))
 		debug_to_console($_POST["age"]);
 		$age_filter = implode("','", $_POST["age"]);
 		$query .= " AND age IN('".$age_filter."')";
-	} else
+	}
 	if(isset($_POST["nxb"]))
 	{
 		$nxb_filter = implode("','", $_POST["nxb"]);
