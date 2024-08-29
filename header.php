@@ -33,6 +33,10 @@
                     <img src="./images/home/header/account.png" alt="cart">
                     <p class="header_label">Tài khoản</p>
                 </a>
+                <!-- <a href="logout.php" class="header_icon">
+                    <img src="./images/home/header/logout.png" alt="cart">
+                    <p class="header_label">Đăng xuất</p>
+                </a> -->
             </div>
         </div>
     </header>

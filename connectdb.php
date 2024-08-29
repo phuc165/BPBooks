@@ -31,5 +31,16 @@
             die("Lỗi trong hàm: " . __FUNCTION__ . ":" . $e->getMessage());
         }  
     }
+
+    function getProduct4Cart($idP) {
+        try {
+            $sql = "SELECT title, img1, newPrice, oldPrice FROM product WHERE productID=$idP";
+            global $conn;
+            $kq = $conn->query($sql);
+            return $kq->fetch();
+        } catch (Exception $e) {
+            die("Lỗi trong hàm: " . __FUNCTION__ . ":" . $e->getMessage());
+        }  
+    }
 ?>
 
