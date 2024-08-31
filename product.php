@@ -119,7 +119,7 @@
                             <div class="title"><a href="product.php?productID=<?=$productItem['productID']?>"><?= $productItem['title'] ?></a></div>
                             <div class="product_price">
                                 <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1-($productItem['newPrice']/$productItem['oldPrice']))*100,1) ?>%</span></p>
-                                <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>productItem
+                                <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
                             </div>
                             <div class="buyContainer">
                                 <div class="addCart"><?php  ?>Thêm vào giỏ</div>
