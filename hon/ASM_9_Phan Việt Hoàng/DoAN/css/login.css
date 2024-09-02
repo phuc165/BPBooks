@@ -1,0 +1,80 @@
+body{
+    background:linear-gradient(to top left, 
+    #9d9d9d 0%,
+     white 50%,
+      white 50%, 
+      #9d9d9d 100%);
+      margin: 0;
+}
+.container{
+    width: 40%;
+    margin: 200px auto 100px auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    margin-top: 16vh !important;
+}
+.invisible-box{
+    height: 24vh;
+    width: 30%;
+    margin: auto;
+}
+.invisible-box>img{
+    width: 100%;
+    height: 90%;
+
+}
+.tabcontent{
+    display: none;
+}
+.login-form, .register-form{
+    padding:20px;
+}
+.login-form>div,.register-form>div{
+    margin: 15px;
+}
+
+.login-tab>button{
+    background-color: white;
+    border:none;
+    width:40%;
+    border-bottom: 1px solid #EEEEEE;
+    font-size: large;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.login-tab button.active{
+    border-bottom: 2px solid #000000;
+}
+.input{
+    border: 1px solid lightgray;
+    width: 100%;
+    height: 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    padding: 10px 0;
+    font-size: 1em;
+}
+
+.submit-button{
+    text-align: center;
+}
+.submit-button>button:hover{
+    background-color: #ed7373;
+}
+.submit-button>button{
+    border-radius: 10px;
+    padding: 10px 70px;
+    color:white;
+    background-color: #CF0A0A;
+    border: none;
+}
+.submit-button>button:disabled{
+    border-radius: 10px;
+    padding: 10px 70px;
+    color: #888888;
+    background-color: #EEEEEE;
+}
+
+
+

@@ -1,0 +1,69 @@
+.container{
+    margin: 11vh auto 0 auto;
+    width: 100vw;
+    background-color: rgb(255, 255, 255);
+    
+}
+.info>p{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+.bill-single{
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(232, 232, 232);
+    border: solid 2px #bababa;
+    border-radius: 10px;
+
+}
+.bill-id{
+    width: 10%;
+    
+}
+.bill-id>p{
+    text-align: center;
+    
+}
+.bill-product{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.prod-img{
+    width: 20%;
+    background-color: rgb(255, 255, 255);
+    border: solid .5px #bebebe;
+}
+.prod-img>img{
+    width: 100%;
+    height: 100%;
+}
+.name-price{
+width: 50%;
+display: flex;
+flex-direction: column;
+}
+.bill-product-name{
+
+}
+.bill-product-price{
+
+}
+.bill-product-total{
+    width: 30%;
+}
+.bill-address{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.bill-time{
+    width: 10%;
+}
+.bill-state{
+    width: 10%;
+}

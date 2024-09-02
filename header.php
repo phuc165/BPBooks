@@ -18,12 +18,22 @@
                     </ul>
                 </div>
             </div> -->
-            <form action="#" class="searchform">
-                <input type="text" placeholder="Tìm truyện" class="searchbar">
+            <div class="searchform">
+                <input type="text" placeholder="Tìm truyện" class="searchbar" id="search" onkeyup="Search()">
+            
+                 
+
                 <button type="submit" class="searchbutton">
                     <img src="./images/home/header/searchicon.png" alt="">
                 </button>
-            </form>
+                <br>
+                <div id="resultList" class="search-result hidden">
+                        
+                        
+                        
+                </div>   
+                
+            </div>
             <div style="width: 30%;">
                 <a href="giohang.php" class="header_icon">
                     <img src="./images/home/header/cart.svg" alt="cart" onclick="checkLogin()">
@@ -39,4 +49,5 @@
                 </a> -->
             </div>
         </div>
+        <script src="./js/search.js"></script>
     </header>
