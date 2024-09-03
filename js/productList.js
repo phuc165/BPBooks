@@ -79,10 +79,10 @@ function FilterProduct() {
   for (var i = 0; i < filteredList.length; i++) {
     var object = {
       id: filteredList[i].productID,
-      qtt: 1,
-      name: filteredList[i].title,
+      qty: 1,
+      title: filteredList[i].title,
       img: filteredList[i].img1,
-      warehouse: filteredList[i].productQty,
+      productQty: filteredList[i].productQty,
       newPrice: filteredList[i].newPrice,
       oldPrice: filteredList[i].oldPrice,
     };
@@ -108,9 +108,9 @@ function FilterProduct() {
                                 <p class='oldprice'>${filteredList[i].oldPrice} đ</p>
                             </div>
                             <div class='buyContainer'>
-                                <form class='addCart' method='post' action='xulygiohang.php'>
-                                    <input type='hidden' name='productID' value='${filteredList[i].productID}'/>
-                                    <button type='submit' style='border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;'>Thêm vào giỏ</button>
+                                <form method='post' action='addCart.php'>
+                                    <input type='hidden' name='productID' value='${newnewstring}'/>
+                                    <button type='submit' class='addCart' >Thêm vào giỏ</button>
                                 </form>
                                 <div class='buyNow'>Mua ngay</div>
                             </div>  

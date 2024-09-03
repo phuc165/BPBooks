@@ -35,3 +35,13 @@ select, option{
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
+.buyContainer .buyNow, .buyContainer .addCart{
+    padding: 10px 20px;
+    align-self: center;
+    background-color: #CF0A0A;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+}

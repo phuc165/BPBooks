@@ -5,16 +5,14 @@ require_once 'connectdb.php';
 if (!isset($_SESSION['userID'])) {
     header("location: login.php");
 } else {
-    if ($_SESSION['cart'] == null) {
-        $_SESSION['cart']=[];
-    }
     $cartList = $_SESSION['cart'];
     global $cartToJson;
     if ($cartList != null) {
-    foreach ($cartList as $cartItem) {
-        $jsonCart = json_decode($cartItem, true);
-        $cartToJson[] = $jsonCart;
-    }}
+        foreach ($cartList as $cartItem) {
+            $jsonCart = json_decode($cartItem, true);
+            $cartToJson[] = $jsonCart;
+        }
+    }
 }
 ?>
 
@@ -43,12 +41,11 @@ if (!isset($_SESSION['userID'])) {
             <div class="col1">
                 <div class="firstRow">
                     <span id="totalItem"></span>
-                    <p>Số lượng</p>
-                    <p>Thành tiền</p>
-                    <div></div>
+                    <p id="qtyTitle">Số lượng</p>
+                    <p id="sumTitle">Thành tiền</p>
                 </div>
                 <div class="productContainer" id="cartList">
-                    
+
                 </div>
             </div>
             <div class="col2">

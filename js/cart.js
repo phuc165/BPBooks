@@ -55,7 +55,7 @@ function RemoveFromCart(index) {
 function UpdateCart() {
   var cartstring = "";
   if (cartListJson == null) {
-    totalInCart.innerHTML = `Bạn đang có 0 sản phẩm trong giỏ hàng`;
+    totalInCart.innerHTML = `Hổng có gì hết trơn`;
     cartstring = `
                 <div class='cart-empty'>
                     <img src='./images/empty-cart.png' >

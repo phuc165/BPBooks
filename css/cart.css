@@ -22,19 +22,21 @@ h2{
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
-    text-align: center;
+    
     align-items: center;
     padding: 10px;
 }
-.firstRow label{
-    width: 65%;
+
+#totalItem {
+    width: 47%;
     text-align: left;
 }
-.firstRow p{
-    width: 10%;
+#qtyTitle, #sumTitle {
+    width: 16%;
+    text-align: center;
 }
-.firstRow div{
-    width: 4%;
+#sumTitle {
+    width: 15%;
 }
 .productContainer{
     width: 100%;
@@ -139,4 +141,8 @@ h2{
 .pay a{
     color: #ffffff;
     text-decoration: none;
+}
+
+.cart-empty {
+    margin:auto;
 }

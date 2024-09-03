@@ -61,17 +61,17 @@ $check = true;
                         echo "
                         <div class='product_container'>
                             <a href='product.php?productID={$productItem['productID']}' class='product_image'>
-                                <img src='{$productItem['img1'] }' alt=''>
+                                <img src='{$productItem['img1']}' alt=''>
                             </a>
                             <div class='product_bottom'>
-                                <div class='title'><a href='product.php?productID={$productItem['productID'] }'>{$productItem['title'] }</a></div>
+                                <div class='title'><a href='product.php?productID={$productItem['productID']}'>{$productItem['title']}</a></div>
                                 <div class='product_price'>
-                                    <p class='newprice'>{$productItem['newPrice'] }đ<span id='discount'>-". round((1 - ($productItem['newPrice'] /$productItem['oldPrice'])) * 100, 1)."%</span></p>
-                                    <p class='oldprice'>{$productItem['oldPrice'] } đ</p>
+                                    <p class='newprice'>{$productItem['newPrice']}đ<span id='discount'>-" . round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) . "%</span></p>
+                                    <p class='oldprice'>{$productItem['oldPrice']} đ</p>
                                 </div>
                                 <div class='buyContainer'>
                                     <form method='post' action='addCart.php'>
-                                        <input type='hidden' name='productID' value='{$object }' />
+                                        <input type='hidden' name='productID' value='{$object}' />
                                         <button type='submit' class='addCart'>Thêm vào giỏ</button>
                                     </form>
                                     <button class='buyNow'>Mua ngay</button>
@@ -93,69 +93,89 @@ $check = true;
                     <?php
                     for ($p = 5; $p < 10; $p++) {
                         $productItem = $product[$p];
-                    ?>
-                        <div class="product_container">
-                            <a href="product.php?productID={ $productItem['productID'] ?>" class="product_image">
-                                <img src="<?= $productItem['img1'] ?>" alt="">
+                        $object = json_encode([
+                            "id" => $productItem['productID'],
+                            "qty" => 1,
+                            "title" => $productItem['title'],
+                            "img" => $productItem['img1'],
+                            "productQty" => $productItem['productQty'],
+                            "newPrice" => $productItem['newPrice'],
+                            "oldPrice" => $productItem['oldPrice']
+                        ], JSON_UNESCAPED_UNICODE);
+                        echo "
+                        <div class='product_container'>
+                            <a href='product.php?productID={$productItem['productID']}' class='product_image'>
+                                <img src='{$productItem['img1']}' alt=''>
                             </a>
-                            <div class="product_bottom">
-                                <div class="title"><a href="product.php?productID=<?= $productItem['productID'] ?>"><?= $productItem['title'] ?></a></div>
-                                <div class="product_price">
-                                    <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) ?>%</span></p>
-                                    <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
+                            <div class='product_bottom'>
+                                <div class='title'><a href='product.php?productID={$productItem['productID']}'>{$productItem['title']}</a></div>
+                                <div class='product_price'>
+                                    <p class='newprice'>{$productItem['newPrice']}đ<span id='discount'>-" . round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) . "%</span></p>
+                                    <p class='oldprice'>{$productItem['oldPrice']} đ</p>
                                 </div>
-                                <div class="buyContainer">
-                                    <form class="addCart" method="post" action="xulygiohang.php">
-                                        <input type="hidden" name="productID" value="<?= $productItem['productID'] ?>" />
-                                        <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
+                                <div class='buyContainer'>
+                                    <form method='post' action='addCart.php'>
+                                        <input type='hidden' name='productID' value='{$object}' />
+                                        <button type='submit' class='addCart'>Thêm vào giỏ</button>
                                     </form>
-                                    <div class="buyNow">Mua ngay</div>
+                                    <button class='buyNow'>Mua ngay</button>
                                 </div>
-                                <div class="rating_container">
-                                    <div class="rating">
+                                <div class='rating_container'>
+                                    <div class='rating'>
 
                                     </div>
-                                    <div class="soldqty">
+                                    <div class='soldqty'>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    ";
+                    } ?>
                 </div>
                 <div class="mySlides fade">
                     <?php
                     for ($p = 10; $p < 15; $p++) {
                         $productItem = $product[$p];
-                    ?>
-                        <div class="product_container">
-                            <a href="product.php?productID=<?= $productItem['productID'] ?>" class="product_image">
-                                <img src="<?= $productItem['img1'] ?>" alt="">
+                        $object = json_encode([
+                            "id" => $productItem['productID'],
+                            "qty" => 1,
+                            "title" => $productItem['title'],
+                            "img" => $productItem['img1'],
+                            "productQty" => $productItem['productQty'],
+                            "newPrice" => $productItem['newPrice'],
+                            "oldPrice" => $productItem['oldPrice']
+                        ], JSON_UNESCAPED_UNICODE);
+                        echo "
+                        <div class='product_container'>
+                            <a href='product.php?productID={$productItem['productID']}' class='product_image'>
+                                <img src='{$productItem['img1']}' alt=''>
                             </a>
-                            <div class="product_bottom">
-                                <div class="title"><a href="product.php?productID=<?= $productItem['productID'] ?>"><?= $productItem['title'] ?></a></div>
-                                <div class="product_price">
-                                    <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) ?>%</span></p>
-                                    <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
+                            <div class='product_bottom'>
+                                <div class='title'><a href='product.php?productID={$productItem['productID']}'>{$productItem['title']}</a></div>
+                                <div class='product_price'>
+                                    <p class='newprice'>{$productItem['newPrice']}đ<span id='discount'>-" . round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) . "%</span></p>
+                                    <p class='oldprice'>{$productItem['oldPrice']} đ</p>
                                 </div>
-                                <div class="buyContainer">
-                                    <form class="addCart" method="post" action="xulygiohang.php">
-                                        <input type="hidden" name="productID" value="<?= $productItem['productID'] ?>" />
-                                        <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
+                                <div class='buyContainer'>
+                                    <form method='post' action='addCart.php'>
+                                        <input type='hidden' name='productID' value='{$object}' />
+                                        <button type='submit' class='addCart'>Thêm vào giỏ</button>
                                     </form>
-                                    <div class="buyNow">Mua ngay</div>
+                                    <button class='buyNow'>Mua ngay</button>
                                 </div>
-                                <div class="rating_container">
-                                    <div class="rating">
+                                <div class='rating_container'>
+                                    <div class='rating'>
 
                                     </div>
-                                    <div class="soldqty">
+                                    <div class='soldqty'>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <?php } ?>
+                    ";
+                    } ?>
                 </div>
             </div>
     <?php

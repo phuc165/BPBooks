@@ -59,43 +59,44 @@ global $product;
             $productItem = $kq->fetch();
             $object = json_encode([
                 "id" => $productItem['productID'],
-                "qtt" => 1,
-                "name" => $productItem['title'],
+                "qty" => 1,
+                "title" => $productItem['title'],
                 "img" => $productItem['img1'],
-                "warehouse" => $productItem['productQty'],
-                "price" => $productItem['newPrice']
+                "productQty" => $productItem['productQty'],
+                "newPrice" => $productItem['newPrice'],
+                "oldPrice" => $productItem['oldPrice']
             ], JSON_UNESCAPED_UNICODE);
-            echo '
-                    <div class="product_container2">
-                        <a href="product.php?productID=' . $productItem['productID'] . '" class="product_image">
-                            <img src="' . $productItem['img1'] . '" alt="">
+            echo "
+                    <div class='product_container2'>
+                        <a href='product.php?productID={$productItem['productID']}' class='product_image'>
+                            <img src='{$productItem['img1']}' alt=''>
                         </a>
-                        <div class="product_bottom">
-                            <div class="title">
-                                <a href="product.php?productID=' . $productItem['productID'] . '">' . $productItem['title'] . '</a>
+                        <div class='product_bottom'>
+                            <div class='title'>
+                                <a href='product.php?productID={$productItem['productID']}'>{$productItem['title']}</a>
                             </div>                        
-                            <div class="product_price">
-                                <p class="newprice">' . $productItem['newPrice'] . ' đ<span>-' . round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) . '%</span></p>
-                                <p class="oldprice">' . $productItem['oldPrice'] . ' đ</p>
+                            <div class='product_price'>
+                                <p class='newprice'>{$productItem['newPrice']} đ<span>-".round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1)."%</span></p>
+                                <p class='oldprice'>{$productItem['oldPrice']} đ</p>
                             </div>
-                            <div class="buyContainer">
-                                <form class="addCart" method="post" action="xulygiohang.php">
-                                    <input type="hidden" name="productID" value="' . $productItem['productID'] . '"/>
-                                    <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
+                            <div class='buyContainer'>
+                                <form method='post' action='addCart.php'>
+                                    <input type='hidden' name='productID' value='{$object}'/>
+                                    <button type='submit' class='addCart'>Thêm vào giỏ</button>
                                 </form>
-                                <div class="buyNow">Mua ngay</div>
+                                <button class='buyNow'>Mua ngay</button>
                             </div>  
-                            <div class="rating_container">
-                                <div class="rating">
+                            <div class='rating_container'>
+                                <div class='rating'>
                                     
                                 </div>
-                                <div class="soldqty">
+                                <div class='soldqty'>
                                     
                                 </div>
                             </div>
                         </div>                         
                     </div>
-			    ';
+			    ";
         }
         ?>
         <div class="category_expand" id="showmore" onclick="ShowAll()">Xem thêm</div>
