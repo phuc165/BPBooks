@@ -86,7 +86,7 @@ h2{
     justify-content: center;
     border: 1px solid #E0E0E0E0
 }
-.qtyControl #qty{
+.qtyControl .qty{
     margin: auto 10px;
     display: flex;
 }

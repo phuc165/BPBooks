@@ -1,17 +1,16 @@
 <?php
-    session_start();
+session_start();
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $productId = $_POST['productId'];
-    
-        // Assuming you have a session variable to store the cart
-        if (!isset($_SESSION['cart'])) {
-            $_SESSION['cart'] = [];
-        }
-    
-        // Add the product to the cart (you can implement your own logic here)
-        $_SESSION['cart'][] = $productId;
-    
-        echo json_encode(['message' => 'Product added to cart successfully']);
-    }
-?>
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+}
+
+if (isset($_POST['productID'])) {
+    $stringg = $_POST['productID'];
+
+    $_SESSION['cart'][] = $stringg;
+    header("location: ./home.php");
+} else {
+    echo "Invalid request.";
+    header("location: ./home.php");
+}

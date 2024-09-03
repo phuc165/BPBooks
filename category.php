@@ -21,64 +21,73 @@ $check = true;
 <div class="category_box">
     <div class="tab">
         <?php
-            foreach ($theLoai as $TL) {
-                $categoryDisplayName = str_replace("_", " ", $TL['theLoai']); ?>
-                <button 
-                    class="tablinks" 
-                    onclick="openCategory(event, '<?=$TL['theLoai']?>', <?=$i?>)" 
-                    <?php if ($i == 0) { 
-                            echo ' id="defaultOpen"'; 
-                        } else{
-                            echo ' id="'.$TL['theLoai'].'2"';
-                        }
-                    ?>
-                >
-                    <?=$categoryDisplayName?>
-                </button>
-                <?php 
-                $i += 3; 
-            }?>
-    </div>      
-    <?php
         foreach ($theLoai as $TL) {
-            $idTheLoai = $TL['theLoai'];
-            $product = getProduct4Slide($idTheLoai);
-            if (count($product) >= 15) {
+            $categoryDisplayName = str_replace("_", " ", $TL['theLoai']); ?>
+            <button
+                class="tablinks"
+                onclick="openCategory(event, '<?= $TL['theLoai'] ?>', <?= $i ?>)"
+                <?php if ($i == 0) {
+                    echo ' id="defaultOpen"';
+                } else {
+                    echo ' id="' . $TL['theLoai'] . '2"';
+                }
+                ?>>
+                <?= $categoryDisplayName ?>
+            </button>
+        <?php
+            $i += 3;
+        } ?>
+    </div>
+    <?php
+    foreach ($theLoai as $TL) {
+        $idTheLoai = $TL['theLoai'];
+        $product = getProduct4Slide($idTheLoai);
+        if (count($product) >= 15) {
     ?>
-            <div id="<?=$TL['theLoai']?>" class="tabcontent">
+            <div id="<?= $TL['theLoai'] ?>" class="tabcontent">
                 <div class="mySlides fade">
                     <?php
                     for ($p = 0; $p < 5; $p++) {
                         $productItem = $product[$p];
-                    ?>
-                        <div class="product_container">
-                            <a href="product.php?productID=<?=$productItem['productID']?>" class="product_image">
-                                <img src="<?= $productItem['img1'] ?>" alt="">
+                        $object = json_encode([
+                            "id" => $productItem['productID'],
+                            "qty" => 1,
+                            "title" => $productItem['title'],
+                            "img" => $productItem['img1'],
+                            "productQty" => $productItem['productQty'],
+                            "newPrice" => $productItem['newPrice'],
+                            "oldPrice" => $productItem['oldPrice']
+                        ], JSON_UNESCAPED_UNICODE);
+                        echo "
+                        <div class='product_container'>
+                            <a href='product.php?productID={$productItem['productID']}' class='product_image'>
+                                <img src='{$productItem['img1'] }' alt=''>
                             </a>
-                            <div class="product_bottom">
-                                <div class="title"><a href="product.php?productID=<?=$productItem['productID']?>"><?= $productItem['title'] ?></a></div>
-                                <div class="product_price">
-                                    <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1-($productItem['newPrice']/$productItem['oldPrice']))*100,1) ?>%</span></p>
-                                    <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
+                            <div class='product_bottom'>
+                                <div class='title'><a href='product.php?productID={$productItem['productID'] }'>{$productItem['title'] }</a></div>
+                                <div class='product_price'>
+                                    <p class='newprice'>{$productItem['newPrice'] }đ<span id='discount'>-". round((1 - ($productItem['newPrice'] /$productItem['oldPrice'])) * 100, 1)."%</span></p>
+                                    <p class='oldprice'>{$productItem['oldPrice'] } đ</p>
                                 </div>
-                                <div class="buyContainer">
-                                    <form class="addCart" method="post" action="giohang.php">
-                                        <input type="hidden" name="productID" value="<?=$productItem['productID']?>"/>
-                                        <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
+                                <div class='buyContainer'>
+                                    <form method='post' action='addCart.php'>
+                                        <input type='hidden' name='productID' value='{$object }' />
+                                        <button type='submit' class='addCart'>Thêm vào giỏ</button>
                                     </form>
-                                    <div class="buyNow">Mua ngay</div>
-                                </div>                                
-                                <div class="rating_container">
-                                    <div class="rating">
-
+                                    <button class='buyNow'>Mua ngay</button>
                                 </div>
-                                <div class="soldqty">
+                                <div class='rating_container'>
+                                    <div class='rating'>
 
-                                </div>
+                                    </div>
+                                    <div class='soldqty'>
+
+                                    </div>
                                 </div>
                             </div>
-                        </div>  
-                <?php } ?>
+                        </div>
+                    ";
+                    } ?>
                 </div>
                 <div class="mySlides fade">
                     <?php
@@ -86,33 +95,33 @@ $check = true;
                         $productItem = $product[$p];
                     ?>
                         <div class="product_container">
-                            <a href="product.php?productID=<?=$productItem['productID']?>" class="product_image">
+                            <a href="product.php?productID={ $productItem['productID'] ?>" class="product_image">
                                 <img src="<?= $productItem['img1'] ?>" alt="">
                             </a>
                             <div class="product_bottom">
-                                <div class="title"><a href="product.php?productID=<?=$productItem['productID']?>"><?= $productItem['title'] ?></a></div>
+                                <div class="title"><a href="product.php?productID=<?= $productItem['productID'] ?>"><?= $productItem['title'] ?></a></div>
                                 <div class="product_price">
-                                    <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1-($productItem['newPrice']/$productItem['oldPrice']))*100,1) ?>%</span></p>
+                                    <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) ?>%</span></p>
                                     <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
                                 </div>
                                 <div class="buyContainer">
                                     <form class="addCart" method="post" action="xulygiohang.php">
-                                        <input type="hidden" name="productID" value="<?=$productItem['productID']?>"/>
+                                        <input type="hidden" name="productID" value="<?= $productItem['productID'] ?>" />
                                         <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
                                     </form>
                                     <div class="buyNow">Mua ngay</div>
-                                </div>                                
+                                </div>
                                 <div class="rating_container">
                                     <div class="rating">
 
-                                </div>
-                                <div class="soldqty">
+                                    </div>
+                                    <div class="soldqty">
 
-                                </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>  
-                <?php } ?>
+                        </div>
+                    <?php } ?>
                 </div>
                 <div class="mySlides fade">
                     <?php
@@ -120,46 +129,47 @@ $check = true;
                         $productItem = $product[$p];
                     ?>
                         <div class="product_container">
-                            <a href="product.php?productID=<?=$productItem['productID']?>" class="product_image">
+                            <a href="product.php?productID=<?= $productItem['productID'] ?>" class="product_image">
                                 <img src="<?= $productItem['img1'] ?>" alt="">
                             </a>
                             <div class="product_bottom">
-                                <div class="title"><a href="product.php?productID=<?=$productItem['productID']?>"><?= $productItem['title'] ?></a></div>
+                                <div class="title"><a href="product.php?productID=<?= $productItem['productID'] ?>"><?= $productItem['title'] ?></a></div>
                                 <div class="product_price">
-                                    <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1-($productItem['newPrice']/$productItem['oldPrice']))*100,1) ?>%</span></p>
+                                    <p class="newprice"><?= $productItem['newPrice'] ?>đ<span id="discount">-<?= round((1 - ($productItem['newPrice'] / $productItem['oldPrice'])) * 100, 1) ?>%</span></p>
                                     <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
                                 </div>
                                 <div class="buyContainer">
                                     <form class="addCart" method="post" action="xulygiohang.php">
-                                        <input type="hidden" name="productID" value="<?=$productItem['productID']?>"/>
+                                        <input type="hidden" name="productID" value="<?= $productItem['productID'] ?>" />
                                         <button type="submit" style="border: none; background-color: #CF0A0A; color: white; font-size:16px; cursor: pointer;">Thêm vào giỏ</button>
                                     </form>
                                     <div class="buyNow">Mua ngay</div>
-                                </div>                                
+                                </div>
                                 <div class="rating_container">
                                     <div class="rating">
 
-                                </div>
-                                <div class="soldqty">
+                                    </div>
+                                    <div class="soldqty">
 
-                                </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>  
-                <?php } ?>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
-    <?php            
-            } else {echo    '<script>
-                                const element = document.getElementById("'.$TL['theLoai'].'2");
+    <?php
+        } else {
+            echo    '<script>
+                                const element = document.getElementById("' . $TL['theLoai'] . '2");
                                 element.style.display="none";
-                            </script>';}
+                            </script>';
         }
-    ?>           
-    <div class="sliderButton" id="slider_next" onclick="plusSlides(1)" ></div> 
+    }
+    ?>
+    <div class="sliderButton" id="slider_next" onclick="plusSlides(1)"></div>
     <div class="sliderButton" id="slider_prev" onclick="plusSlides(-1)"></div>
 </div>
 
 
 <?php
-    
