@@ -236,3 +236,26 @@
 .fcol{
     margin: 10px;
 }
+
+
+
+
+.groupIcon{
+  width: 30%;
+  display: flex;
+}
+.logout_icon{
+  display: flex;
+  float: left;
+  width: fit-content !important;
+  text-decoration: none;
+  border: 1px solid #888888;
+  border-radius: 10px;
+  background-color: #CF0A0A;
+  margin: auto;
+  padding: 10px;
+}
+.logout_icon img{
+  width: 32px;
+  height: 32px;
+}

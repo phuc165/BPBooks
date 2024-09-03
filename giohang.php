@@ -5,12 +5,16 @@ require_once 'connectdb.php';
 if (!isset($_SESSION['userID'])) {
     header("location: login.php");
 } else {
+    if ($_SESSION['cart'] == null) {
+        $_SESSION['cart']=[];
+    }
     $cartList = $_SESSION['cart'];
     global $cartToJson;
+    if ($cartList != null) {
     foreach ($cartList as $cartItem) {
         $jsonCart = json_decode($cartItem, true);
         $cartToJson[] = $jsonCart;
-    }
+    }}
 }
 ?>
 
@@ -31,14 +35,14 @@ if (!isset($_SESSION['userID'])) {
     </script>
 </head>
 
-<body>
+<body onload="UpdateCart()">
     <?php require_once 'header.php' ?>
     <div class="bodyContainer">
-        <h2>GIỎ HÀNG <span id="totalItem"></span></h2>
+        <h2> Giỏ hàng</h2>
         <div class="cartContainer">
             <div class="col1">
                 <div class="firstRow">
-                    <label for=""><span id="productCount"></span><input type="checkbox" name="" id="checkAll">Chọn tất cả</label>
+                    <span id="totalItem"></span>
                     <p>Số lượng</p>
                     <p>Thành tiền</p>
                     <div></div>

@@ -1,10 +1,10 @@
-var cartPageHolder = document.getElementById("cartlist");
+var cartPageHolder = document.getElementById("cartList");
 var total = document.getElementById("sum");
 var totalInCart = document.getElementById("totalItem");
 var cartArray = [];
 
 function PlusQty(id) {
-  if (cartListJson[id].qty < cartListJson[id].quantity) {
+  if (cartListJson[id].qty < cartListJson[id].productQty) {
     cartListJson[id].qty += 1;
   }
   UpdateTotal(id);
@@ -66,12 +66,12 @@ function UpdateCart() {
       totalInCart.innerHTML = `Bạn đang có ${cartListJson.length} sản phẩm trong giỏ hàng`;
       cartstring += `
         <div class='product'>
-            <div class='imgHolder'><img src='${cartListJson[i].img1}' alt></div>
+            <div class='imgHolder'><img src='${cartListJson[i].img}' alt></div>
             <div id='title'>${cartListJson[i].title}</div>
             <div class='qtyControl'>
-                <button onclick='MinusQtt(${i})'>-</button>
-                <div class='qty'></div>
-                <button onclick='PlusQtt(${i})'>+</button>
+                <button onclick='MinusQty(${i})'>-</button>
+                <div class='qty'>${cartListJson[i].qty}</div>
+                <button onclick='PlusQty(${i})'>+</button>
             </div>
             <div class='price'>
                 <div id='newprice'>${cartListJson[i].newPrice}</div>

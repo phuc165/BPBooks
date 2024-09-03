@@ -1,3 +1,12 @@
+<?php
+session_start();
+require_once 'connectdb.php';
+
+if (!isset($_SESSION['userID'])){
+    header("location: login.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +16,7 @@
         <link rel="icon" href="./images/home/header/iconlogo.png" type="">
         <link rel="stylesheet" href="./css/foothead.css">
         <link rel="stylesheet" href="./css/payment.css">
+        <script src="./js/thanhtoan.js"></script>
     </head>
 <body>
     <?php require_once 'header.php' ?>
@@ -28,18 +38,37 @@
                         <div class="inputField">
                             <input type="text" placeholder="Nhập họ và tên người nhận">
                             <input type="text" placeholder="Ví dụ: 0909123xxx (10 ký tự số)">
-                            <input type="text" placeholder="Nhập Email">                        
-                            <select>
-                                <option selected>TP. HCM</option>
-                                <option>Hà Nội</option>
+                            <input type="text" placeholder="Nhập Email">
+                            
+                            
+                            <select id="tinhthanh" name="tinhthanh" onchange="quanHuyen()" required>
+                                <option>Tỉnh/Thành</option>
+                                <?php
+                                    try {
+                                        $sql = "SELECT * FROM province";
+                                        // global $conn;
+                                        $kq = $conn->query($sql);
+                                    }
+                                    catch (Exception $e){
+                                        die("Lỗi thực thi sql: " . $e->getMessage() ) ;
+                                    }
+
+                                    foreach($kq as $tt){
+                                        echo "<option value='" . $tt['pID'] . "'>" . $tt['pName'] . "</option>";
+                                    }
+                                   
+                        
+            
+                                ?>
+                                
                             </select>
-                            <select>
-                                <option>TP. HCM</option>
-                                <option>Hà Nội</option>
+
+
+                            <select id="quanhuyen" name="quanhuyen" onchange="phuongXa()" required>
+                            <option>Quận/Huyện</option>
                             </select>
-                            <select>
-                                <option>TP. HCM</option>
-                                <option>Hà Nội</option>
+                            <select id="phuongxa" name="phuongxa" required>
+                                <option>Phường/Xã</option>
                             </select>
                             <input type="text" placeholder="Số nhà, tên đường">
                         </div>
@@ -102,5 +131,6 @@
             <div><a href="successOrder.php">XÁC NHẬN THANH TOÁN</a></div>
         </div>
     </div>
+    <script src="./js/thanhtoan.js"></script>
 </body>
 </html>
