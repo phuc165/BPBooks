@@ -54,7 +54,7 @@ if (!isset($_SESSION['userID'])) {
                         <div>Thành tiền</div>
                         <div id="sum"></div>
                     </div>
-                    <div class="pay"><a href="thanhtoan.php">THANH TOÁN</a></div>
+                    <div class="pay"><a href="thanhtoan.php?Cart=1">THANH TOÁN</a></div>
                 </div>
             </div>
         </div>

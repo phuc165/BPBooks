@@ -74,7 +74,7 @@ $check = true;
                                         <input type='hidden' name='productID' value='{$object}' />
                                         <button type='submit' class='addCart'>Thêm vào giỏ</button>
                                     </form>
-                                    <button class='buyNow'>Mua ngay</button>
+                                    <button class='buyNow' <a href='./thanhtoan.php?productID={$productItem['productID']}&qty=1&Cart=0'>Mua ngay</button>
                                 </div>
                                 <div class='rating_container'>
                                     <div class='rating'>
