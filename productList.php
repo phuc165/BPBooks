@@ -84,7 +84,7 @@ global $product;
                                     <input type='hidden' name='productID' value='{$object}'/>
                                     <button type='submit' class='addCart'>Thêm vào giỏ</button>
                                 </form>
-                                <button class='buyNow'>Mua ngay</button>
+                                <a class='buyNow' href='thanhtoan.php?productID={$productItem['productID']}&quantity=1&Cart=0'>Mua Ngay</a>
                             </div>  
                             <div class='rating_container'>
                                 <div class='rating'>

@@ -207,7 +207,7 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.addCart, .buyNow{
+.addCart, #buyNow{
     text-align: center;
     width: 30%;
     padding: 20px 0;
@@ -221,11 +221,13 @@ body{
     border: 3px solid #CF0A0A;
    
 }
-.buyNow{
+#buyNow{
     background-color: #CF0A0A;
     color: white;    
+    
+    text-decoration: none;
 }
-.addCart:active, .buyNow:active{
+.addCart:active, #buyNow:active{
     opacity: 60%;
 }
 
@@ -326,7 +328,7 @@ body{
     margin-bottom: 20px;
 }
 
-.buyContainer .buyNow, .buyContainer .addCart{
+.buyContainer #buyNow, .buyContainer .addCart{
     padding: 10px 20px;
     align-self: center;
     background-color: #CF0A0A;

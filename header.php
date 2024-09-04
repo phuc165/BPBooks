@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ?>
 <header>
@@ -42,13 +42,19 @@
                 <img src="./images/home/header/cart.svg" alt="cart" onclick="checkLogin()">
                 <p class="header_label">Giỏ hàng</p>
             </a>
-            <a href="thanhtoan.php" class="header_icon">
-                
-                <img src="./images/home/header/account.png" alt="cart">
-                <p class="header_label" id="username">Tài khoản</p>
-            </a>
-
             <?php
+            if (isset($_SESSION['userID'])) { ?>
+                <a href="orderViewer.php" class="header_icon">
+                    <img src="./images/home/header/account.png" alt="cart">
+                    <p class="header_label" id="username">Tài khoản</p>
+                </a>
+            <?php
+            } else { ?>
+                <a href="login.php" class="header_icon">
+                    <img src="./images/home/header/account.png" alt="cart">
+                    <p class="header_label" id="username">Tài khoản</p>
+                </a>
+            <?php }
             if (isset($_SESSION['userID'])) { ?>
                 <a href="logout.php" class="logout_icon">
                     <img src="./images/home/header/logout.png" alt="cart">

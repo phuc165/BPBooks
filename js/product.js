@@ -32,21 +32,21 @@ var productName = document.getElementById("productTitle");
 var tempQty = 1;
 var qtyText = document.getElementById("qty");
 
-function PlusQtt() {
+function PlusQty() {
   if (tempQty < productDetail.instock) {
     tempQty++;
   }
   UpdateQtytext();
   InnerBuyButton();
 }
-function MinusQtt() {
+function MinusQty() {
   tempQty--;
   if (tempQty <= 0) tempQty = 0;
   UpdateQtytext();
   InnerBuyButton();
 }
 
-function GetTempQtt() {
+function GetTempQty() {
   return tempQty;
 }
 function UpdateQtytext() {
@@ -82,7 +82,5 @@ function AddToCartSession(value) {
 }
 
 function InnerBuyButton() {
-  document.getElementById(
-    "buyNow"
-  ).innerHTML = `<a href="./payment.php?productID=${productDetail.productID}&quantity=${tempQtt}&FromCart=0">Mua ngay</a>`;
+  document.getElementById("buyNow").innerHTML = `<a href="thanhtoan.php?productID=${productDetail.productID}&quantity=${tempQty}&Cart=0">Mua ngay</a>`;
 }

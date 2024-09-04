@@ -120,7 +120,7 @@
                         echo "<button type='submit' onclick='addCartFromDetail()' class='addCart' disabled >Thêm vào giỏ</button>";
                     }
                     ?>
-                    <div class="buyNow">Mua ngay</div>
+                    <div id="buyNow">Mua ngay</div>
                 </div>
                 <div class=""></div>
             </div>
@@ -148,8 +148,8 @@
                             <p class="oldprice"><?= $productItem['oldPrice'] ?> đ</p>
                         </div>
                         <div class="buyContainer">
-                            <div class="addCart"><?php  ?>Thêm vào giỏ</div>
-                            <div class="buyNow">Mua ngay</div>
+                            <div class="addCart">Thêm vào giỏ</div>
+                            <div id="buyNow">Mua ngay</div>
                         </div>
                         <div class="rating_container">
                             <div class="rating">

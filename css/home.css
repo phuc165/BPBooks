@@ -160,6 +160,8 @@
     border-radius: 10px;
     cursor: pointer;
     border: none;
+    
+    text-decoration: none;
 }
 /*/////////////slider////////////////*/
 .mySlides{
