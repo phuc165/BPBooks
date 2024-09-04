@@ -3,11 +3,16 @@ session_start();
 
 
 if (isset($_POST['value'])) {
-    $stringg = $_POST['value'];
+  $stringg = $_POST['value'];
+
+  if ($stringg == "") {
+    $_SESSION['cart'] = [];
+  } else {
     $_SESSION['cart'][] = $stringg;
-    $stringg = "";
-    echo var_dump($stringg);
-    echo var_dump($_SESSION['cart']);
+  }
+  // $stringg="";
+
+
 } else {
-    echo "Invalid request.";
+  echo "Invalid request.";
 }

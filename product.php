@@ -109,7 +109,7 @@
                     <p>Số lượng:</p>
                     <div class="qtyBTgroup">
                         <button onclick="MinusQty()">-</button>
-                        <div id="qty">1</div>
+                        <div id="qty">0</div>
                         <button onclick="PlusQty()">+</button>
                     </div>
                 </div>

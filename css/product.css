@@ -221,11 +221,19 @@ body{
     border: 3px solid #CF0A0A;
    
 }
-#buyNow{
+#buyNow {
     background-color: #CF0A0A;
-    color: white;    
+    color: white !important;    
     
-    text-decoration: none;
+    text-decoration: none !important;
+}
+#buyNow a{
+    background-color: #CF0A0A;
+    color: white !important;    
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none !important;
 }
 .addCart:active, #buyNow:active{
     opacity: 60%;

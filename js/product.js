@@ -33,7 +33,7 @@ var tempQty = 1;
 var qtyText = document.getElementById("qty");
 
 function PlusQty() {
-  if (tempQty < productDetail.instock) {
+  if (tempQty < productDetail.productQty) {
     tempQty++;
   }
   UpdateQtytext();
