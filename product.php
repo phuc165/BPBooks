@@ -32,7 +32,7 @@
     </script>
 </head>
 
-<body>
+<body onload=" InnerBuyButton();UpdateQtytext() ">
     <?php
     $id = $_GET['productID'];
     settype($id, "int");
@@ -108,9 +108,9 @@
                 <div class="qtyControl">
                     <p>Số lượng:</p>
                     <div class="qtyBTgroup">
-                        <button>-</button>
+                        <button onclick="MinusQty()">-</button>
                         <div id="qty">1</div>
-                        <button>+</button>
+                        <button onclick="PlusQty()">+</button>
                     </div>
                 </div>
                 <div class="buy">

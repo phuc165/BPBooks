@@ -26,6 +26,8 @@ span.onclick = function () {
   modal.style.display = "none";
 };
 
+
+
 var productName = document.getElementById("productTitle");
 var tempQty = 1;
 var qtyText = document.getElementById("qty");
