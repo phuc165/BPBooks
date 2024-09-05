@@ -1,7 +1,10 @@
 <?php
 session_start();
 require_once 'connectdb.php';
-
+if (!isset($_SESSION['cart'])) {  
+    // Step 3: Initialize the session variable as an empty array  
+    $_SESSION['cart'] = [];  
+}
 if (!isset($_SESSION['userID'])) {
     header("location: login.php");
 } else {
