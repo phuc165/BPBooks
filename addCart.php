@@ -10,6 +10,7 @@ if (isset($_POST['productID'])) {
     $dupl = false;
     foreach ($_SESSION['cart'] as $key) {
         $romove = array_search($key, $_SESSION['cart']);
+        $removed = $_SESSION['cart'][$romove];
         unset($_SESSION['cart'][$romove]);
         $check = json_decode($key, true);
         $checked = json_decode($stringg, true);
@@ -18,12 +19,15 @@ if (isset($_POST['productID'])) {
                 $check['qty'] += $checked['qty'];
                 $_SESSION['cart'][] = json_encode($check, JSON_UNESCAPED_UNICODE);
                 $dupl = true;
+                break;
             } else {
                 $check['qty'] = $check['productQty'];
                 $_SESSION['cart'][] = json_encode($check, JSON_UNESCAPED_UNICODE);
                 $dupl = true;
+                break;
             }
         } else {
+            $_SESSION['cart'][]=$removed;
             $dupl = false;
         }
     }
