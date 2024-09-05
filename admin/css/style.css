@@ -94,6 +94,11 @@ header{
     background-color:lightgreen;
 }
 
+.site{
+    display: flex;
+    flex-direction: row;
+}
+
 .site a{
     padding: 10px;
     text-align: center;

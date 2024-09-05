@@ -55,7 +55,7 @@ function getDetailAddress($address)
                 $billCheck = null;
                 for ($i = 0; $i < $kq->rowCount(); $i++) {
                     $bill = $kq->fetch();
-                    $total = +$bill['total'];
+                    $total = $total + $bill['total'];
                     switch ($bill["billState"]) {
                         case 0:
                             $stateText = "Đang chờ xác nhận";

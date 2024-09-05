@@ -1,6 +1,10 @@
 <?php 
     session_start();
-    require_once 'connectdb.php';     
+    require_once 'connectdb.php';
+    if (!isset($_SESSION['username'])){
+        header("location: ./login/login.php");
+        exit();
+    }     
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +57,7 @@
                         <th class="productDelete">Xóa</th>
                         <th class="productEdit">Sửa</th>
 
-                        <th></th>
+                        
                     </tr>
 
                             <?php

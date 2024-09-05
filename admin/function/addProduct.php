@@ -1,5 +1,10 @@
 <?php
     require_once 'functions.php';
+    session_start();
+    if (!isset($_SESSION['username'])){
+        header("location: ../login/login.php");
+        exit();
+    }     
 ?>
 
 <!DOCTYPE html>
@@ -104,7 +109,7 @@
 
         $kq = addProduct($title, $oldPrice, $newPrice, $img1, $img2, $img3, $img4, $rating, $description, $author, $nxb, $age, $theLoai);
         if ($kq){
-            header("location: ../admin.php");
+            header("location: ../productAdmin.php");
             exit();
         }
     }

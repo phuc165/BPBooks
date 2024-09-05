@@ -31,3 +31,25 @@
         $kq = $conn->exec($sql);
         return $kq==1;
     }
+
+    function getBillState($id){
+        $sql = "SELECT billState FROM bill WHERE billID = $id";
+        global $conn;
+        $kq = $conn->query($sql);
+        if ($kq==null) return false;
+        else return $kq->fetch();
+    }
+
+    function updateBillState($id, $billState){
+        $sql = "UPDATE bill SET billState=$billState
+                WHERE billID=$id";
+        global $conn;
+        $kq = $conn->exec($sql);
+        return $kq==1;
+    }
+
+    function deleteBill($id){
+        $sql = "DELETE FROM bill WHERE billID = $id";
+        global $conn;
+        $kq = $conn->exec($sql);
+    }

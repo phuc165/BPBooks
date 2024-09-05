@@ -8,7 +8,7 @@
         exit();
     }     
 
-    $id = $_GET['productID'];
+    $id = $_GET['billID'];
     settype($id, "int");
-    deleteProduct($id);
-    header("location:  ../productAdmin.php");
+    deleteBill($id);
+    header("location:  ../billAdmin.php");

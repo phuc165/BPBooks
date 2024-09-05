@@ -14,7 +14,7 @@ $numrows_user = $kq->rowCount();
 if ($numrows_user == 1) {// login thành công
     session_start();
     $row_user = $kq->fetch();
-    $_SESSION['username'] = $row_user['username'];//tạo biến ghi nhận user đã login
+    $_SESSION['username'] = $row_user['userName'];//tạo biến ghi nhận user đã login
     $_SESSION['password'] = $row_user['password'];//tạo biến ghi nhận user đã login
     header("location: ../index.php");
 }

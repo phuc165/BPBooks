@@ -1,5 +1,11 @@
 <?php
     require_once 'functions.php';
+    session_start();
+    if (!isset($_SESSION['username'])){
+        header("location: ../login/login.php");
+        exit();
+    }     
+
     $id = $_GET['productID'];
     settype($id, "int");
     $product = getDetailProduct($id);
@@ -108,7 +114,7 @@
 
         $kq = updateProduct($id, $title, $oldPrice, $newPrice, $img1, $img2, $img3, $img4, $rating, $description, $author, $nxb, $age, $theLoai);
         if ($kq){
-            header("location: ../admin.php");
+            header("location: ../productAdmin.php");
             exit();
         }
     }
