@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
@@ -27,7 +26,7 @@ if (isset($_POST['productID'])) {
                 break;
             }
         } else {
-            $_SESSION['cart'][]=$removed;
+            $_SESSION['cart'][] = $removed;
             $dupl = false;
         }
     }
