@@ -1,5 +1,4 @@
 <script src="./js/home.js"></script>
-<script src="./js/addCart.js"></script>
 <link rel="stylesheet" href="./css/home.css">
 <?php
 require_once 'connectdb.php';

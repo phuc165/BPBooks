@@ -4,9 +4,7 @@ require_once 'connectdb.php';
 
 if (!isset($_SESSION['userID'])) {
     header("location: login.php");
-} else if (!isset($_SESSION['cart'])){
-    $_SESSION['cart'][] = '';
-}else {
+} else {
     $cartList = $_SESSION['cart'];
     global $cartToJson;
     if ($cartList != null) {

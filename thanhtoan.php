@@ -63,11 +63,11 @@ if ($cart == 1) {
                             <div class="inputField">
                                 <input type="text"
                                     name="name"
-                                    require
+                                    required
                                     placeholder="Nhập họ và tên người nhận">
                                 <input type="text"
                                     name="phone"
-                                    require
+                                    required
                                     placeholder="Ví dụ: 0909123xxx (10 ký tự số)">
                                 <input type="email" name="email" placeholder="Nhập Email">
 
@@ -100,7 +100,7 @@ if ($cart == 1) {
                                 <select id="phuongxa" name="phuongxa" required>
                                     <option>Phường/Xã</option>
                                 </select>
-                                <input type="text" name="address"
+                                <input type="text" required name="address"
                                     placeholder="Số nhà, tên đường">
                             </div>
                         </div>
