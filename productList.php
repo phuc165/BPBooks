@@ -1,7 +1,6 @@
 <?php
 require_once 'connectdb.php';
 require_once "./admin/connectdb.php";
-
 $sql = "SELECT * FROM product WHERE productQty > 0";
 $kq = $conn->query($sql);
 for ($i = 0; $i < $kq->rowCount(); $i++) {

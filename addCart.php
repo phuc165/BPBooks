@@ -19,7 +19,7 @@ if (isset($_POST['productID'])) {
                 $_SESSION['cart'][] = json_encode($check, JSON_UNESCAPED_UNICODE);
                 $dupl = true;
             } else {
-                $check['qty'] = $check['warehouse'];
+                $check['qty'] = $check['productQty'];
                 $_SESSION['cart'][] = json_encode($check, JSON_UNESCAPED_UNICODE);
                 $dupl = true;
             }

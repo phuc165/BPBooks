@@ -112,7 +112,7 @@ function FilterProduct() {
                                     <input type='hidden' name='productID' value='${newnewstring}'/>
                                     <button type='submit' class='addCart' >Thêm vào giỏ</button>
                                 </form>
-                                <div class='buyNow'>Mua ngay</div>
+                                <a class='buyNow' href='thanhtoan.php?productID=${filteredList[i].productID}&quantity=1&Cart=0'>Mua Ngay</a>
                             </div>  
                             <div class='rating_container'>
                                 <div class='rating'>

@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="./css/home.css">
 <?php
 require_once 'connectdb.php';
-
 try {
     $sql = "SELECT DISTINCT theLoai FROM product";
     $theLoai = $conn->query($sql);

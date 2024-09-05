@@ -16,7 +16,20 @@
 
     require_once 'connectdb.php';
 
-    $sql="INSERT INTO user(userName, password) VALUES ('$u','$pass')";
+    function getHightestID($conn){
+    
+        $usersql ="SELECT userID FROM user WHERE userID LIKE 'U%' ORDER BY CAST(SUBSTRING(userID, 2) AS UNSIGNED) DESC LIMIT 1";
+        $u=$conn->query($usersql);
+        if($u->rowCount() > 0) {  
+            $newest = $u->fetch();
+            $newestID = (int)substr($newest["userID"],1);
+        }
+        return $newestID;
+     }   
+       
+    
+        $newID = 'U'.(getHightestID($conn) +1);
+    $sql="INSERT INTO user(userName,userID, password) VALUES ('$u','$newID','$pass')";
     $kq = $conn->exec($sql);
     if($kq==1){
         echo "<script type='text/javascript'>alert('Thành công');</script>";
