@@ -53,6 +53,7 @@ function getDetailAddress($address)
                 $sql = "SELECT * FROM bill JOIN product ON bill.productID=product.productID WHERE bill.userID='{$uID}'  ";
                 $kq = $conn->query($sql);
                 $billCheck = null;
+                $total = 0;
                 for ($i = 0; $i < $kq->rowCount(); $i++) {
                     $bill = $kq->fetch();
                     $total = $total + $bill['total'];
