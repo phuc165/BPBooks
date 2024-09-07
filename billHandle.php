@@ -8,6 +8,7 @@ $address = $_POST["address"];
 $province = $_POST["tinhthanh"];
 $district = $_POST["quanhuyen"];
 $ward = $_POST["phuongxa"];
+$totalPB = $_POST["totalPerBill"];
 $date = date("Y-m-d");
 $state = 0;
 $cart = $_POST['Cart'];
@@ -42,7 +43,7 @@ if ($cart == 1) {
     foreach ($_SESSION['cart'] as $k) {
         $item  = json_decode($k, true);
         $cost = $item['qty'] * $item['newPrice'];
-        addToBill($conn, $billcode, $_SESSION['userID'], $item['id'], $item['qty'], $username, $phoneNum, $fullAddress, $date, $state, $cost);
+        addToBill($conn, $billcode, $_SESSION['userID'], $item['id'], $item['qty'], $username, $phoneNum, $fullAddress, $date, $state, $cost, $totalPB);
         UpdateProductQuantity($conn, $item['id'], $item['qty']);
     }
     $_SESSION['cart'] = [];
@@ -54,7 +55,7 @@ if ($cart == 1) {
     $itemqtt = $_POST['qty'];
     $item = getItem($conn, $itemID);
     $cost = $itemqtt * $item['newPrice'];
-    addToBill($conn, $billcode, $_SESSION['userID'], $itemID, $itemqtt, $username, $phoneNum, $fullAddress, $date, $state, $cost);
+    addToBill($conn, $billcode, $_SESSION['userID'], $itemID, $itemqtt, $username, $phoneNum, $fullAddress, $date, $state, $cost, $totalPB);
     UpdateProductQuantity($conn, $itemID, $itemqtt);
 
 
@@ -66,16 +67,16 @@ if ($cart == 1) {
     $itemqtt = $_POST['qty'];
     $item = getItem($conn, $itemID);
     $cost = $itemqtt * $item['newPrice'];
-    addToBill($conn, $billcode, $newGuestID, $itemID, $itemqtt, $username, $phoneNum, $fullAddress, $date, $state, $cost);
+    addToBill($conn, $billcode, $newGuestID, $itemID, $itemqtt, $username, $phoneNum, $fullAddress, $date, $state, $cost, $totalPB);
     UpdateProductQuantity($conn, $itemID, $itemqtt);
 
 
     header("location: home.php");
 }
 
-function addToBill($conn, $code, $user, $prod, $qtt, $name, $phoneNum, $fullAddress, $date, $state, $total)
+function addToBill($conn, $code, $user, $prod, $qtt, $name, $phoneNum, $fullAddress, $date, $state, $total, $totalPB)
 {
-    $sql = "INSERT INTO bill(billGroup,userID,productID,billQty,userName,phoneNum,userAddress,orderDate,billstate,total) VALUES ('$code','$user','$prod','$qtt','$name','$phoneNum','$fullAddress','$date','$state','$total')";
+    $sql = "INSERT INTO bill(billGroup,userID,productID,billQty,userName,phoneNum,userAddress,orderDate,billstate,total, totalPerBill) VALUES ('$code','$user','$prod','$qtt','$name','$phoneNum','$fullAddress','$date','$state','$total','$totalPB')";
     $kq = $conn->exec($sql);
 }
 $newID = 'G' . (getHightestID($conn) + 1);

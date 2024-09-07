@@ -36,7 +36,9 @@
     align-items: center;
     margin-top: 20px;
     padding: 10px 0;
-}
+    border-bottom: 0.5px solid #eee;
+    box-shadow: rgba(75, 75, 75, 0.2) 0px 2px 8px 0px;
+    }
 .orderStatus {
     width: 20%;
 }

@@ -53,10 +53,8 @@ function getDetailAddress($address)
                 $sql = "SELECT * FROM bill JOIN product ON bill.productID=product.productID WHERE bill.userID='{$uID}'  ";
                 $kq = $conn->query($sql);
                 $billCheck = null;
-                $total = 0;
                 for ($i = 0; $i < $kq->rowCount(); $i++) {
                     $bill = $kq->fetch();
-                    $total = $total + $bill['total'];
                     switch ($bill["billState"]) {
                         case 0:
                             $stateText = "Đang chờ xác nhận";
@@ -84,7 +82,7 @@ function getDetailAddress($address)
                                     <div class='address'>Địa chỉ nhận hàng: " . getDetailAddress($bill['userAddress']) . "-" . getAddress($conn, getWardID($bill['userAddress'])) . "</div>
                                 </div>
                                 <div class='orderDate'>Ngày đặt: {$bill['orderDate']}</div>
-                                <div class='col1' style='color:#CF0A0A; font-siza:18px; font-weight:bold'>{$total} đ</div>
+                                <div class='col1' style='color:#CF0A0A; font-siza:18px; font-weight:bold'>{$bill['totalPerBill']} đ</div>
                             </div>";
                     }
                     echo "

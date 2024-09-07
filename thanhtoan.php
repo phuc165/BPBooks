@@ -178,6 +178,7 @@ if ($cart == 1) {
                 <hr>
                 <button type="submit">XÁC NHẬN THANH TOÁN</button>
                 <div class="totalText">Tổng đơn: <?= $totalOrder ?> đ</div>
+                <input type="hidden" name="totalPerBill" value="<?= $totalOrder ?>">
             </div>
         </div>
     </form>
